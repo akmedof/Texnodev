@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.texnodevcom.texnodev.view.NewsFragment"
-        android:label="fragment_news"
+        android:label="News"
         tools:layout="@layout/fragment_news" >
         <action
             android:id="@+id/action_newsFragment_to_detailsActivity"
@@ -24,4 +24,9 @@
             app:argType="integer"
             android:defaultValue="0" />
     </activity>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.texnodevcom.texnodev.view.FavoriteFragment"
+        android:label="Favorite"
+        tools:layout="@layout/fragment_favorite" />
 </navigation>
