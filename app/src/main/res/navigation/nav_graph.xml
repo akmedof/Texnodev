@@ -9,5 +9,19 @@
         android:id="@+id/newsFragment"
         android:name="com.texnodevcom.texnodev.view.NewsFragment"
         android:label="fragment_news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/detailsActivity"
+        android:name="com.texnodevcom.texnodev.view.DetailsActivity"
+        android:label="activity_details"
+        tools:layout="@layout/activity_details" >
+        <argument
+            android:name="postUUID"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </activity>
 </navigation>
