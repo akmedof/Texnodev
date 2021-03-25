@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_news.*
 class NewsFragment : Fragment() {
 
     private lateinit var viewModel : NewsViewModel
-    private val newsAdapter = NewsAdapter(arrayListOf())
+    private val newsAdapter = NewsAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
