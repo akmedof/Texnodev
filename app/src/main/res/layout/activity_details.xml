@@ -51,13 +51,13 @@
 
             <TextView
                 android:id="@+id/detailsTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Title"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:textColor="#F10759"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailsImage" />
 
