@@ -11,4 +11,14 @@
         android:title="Favorite"
         android:icon="@drawable/favorite_news_icon"/>
 
+    <item android:id="@+id/categoryFragment"
+        android:title="Category"
+        android:icon="@drawable/category_news_icon"/>
+
+    <item android:id="@+id/settingFragment"
+        android:title="Setting"
+        android:icon="@drawable/setting_news_icon"
+        android:iconTint="@color/white"
+        android:iconTintMode="multiply"/>
+
 </menu>

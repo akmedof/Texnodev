@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.texnodevcom.texnodev.view.NewsFragment"
-        android:label="News"
+        android:label="Texnodev"
         tools:layout="@layout/fragment_news" >
         <action
             android:id="@+id/action_newsFragment_to_detailsActivity"
@@ -29,4 +29,14 @@
         android:name="com.texnodevcom.texnodev.view.FavoriteFragment"
         android:label="Favorite"
         tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.texnodevcom.texnodev.view.CategoryFragment"
+        android:label="Category"
+        tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.texnodevcom.texnodev.view.SettingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting" />
 </navigation>
