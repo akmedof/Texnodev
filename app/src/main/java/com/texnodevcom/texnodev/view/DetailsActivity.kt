@@ -8,12 +8,16 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.navArgs
+import com.atilsamancioglu.kotlincountries.util.downloadFromUrl
+import com.atilsamancioglu.kotlincountries.util.placeholderProgressBar
 import com.texnodevcom.texnodev.R
 import com.texnodevcom.texnodev.model.Post
 import com.texnodevcom.texnodev.viewmodel.DetailsViewModel
 import kotlinx.android.synthetic.main.activity_details.*
+import org.jsoup.Jsoup
 
 class DetailsActivity : AppCompatActivity() {
+
 
     private val argPostID by navArgs<DetailsActivityArgs>()
     private lateinit var viewModel : DetailsViewModel
@@ -27,18 +31,11 @@ class DetailsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val uuid = argPostID.postUUID
-        println("POST ID: " + uuid)
+
         viewModel = ViewModelProviders.of(this).get(DetailsViewModel::class.java)
         viewModel.getPostByID(uuid)
 
-        val post = Observer<Post>{ post ->
-            detailsTitle.text = post.title
-            detailsDate.text = post.date
-            detailsContent.text = post.content
-        }
-
-        viewModel.postLiveData.observe(this, post)
-
+        observeLiveData()
 
     }
 
@@ -47,6 +44,17 @@ class DetailsActivity : AppCompatActivity() {
             finish()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun observeLiveData(){
+        val post = Observer<Post>{ post ->
+            detailsTitle.text = post.title
+            detailsDate.text = post.date
+            detailsContent.text = Jsoup.parse(post.content).text()
+            detailsImage.downloadFromUrl(post.medium, placeholderProgressBar(applicationContext))
+        }
+
+        viewModel.postLiveData.observe(this, post)
     }
 }
 
