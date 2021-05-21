@@ -13,6 +13,7 @@
 
     <item android:id="@+id/categoryFragment"
         android:title="Category"
+        android:background="@drawable/bottomnav_bg"
         android:icon="@drawable/category_news_icon"/>
 
     <item android:id="@+id/settingFragment"

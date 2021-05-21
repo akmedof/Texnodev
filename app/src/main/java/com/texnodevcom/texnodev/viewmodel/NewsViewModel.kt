@@ -44,7 +44,7 @@ class NewsViewModel(application: Application) : BaseViewModel(application) {
         launch {
             val posts = PostDatabase(getApplication()).postDAO().getAllPosts()
             showNews(posts)
-            Toast.makeText(getApplication(),"Countries From SQLite", Toast.LENGTH_LONG).show()
+            Toast.makeText(getApplication(),"News Post From SQLite", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -58,7 +58,7 @@ class NewsViewModel(application: Application) : BaseViewModel(application) {
                 .subscribeWith(object : DisposableSingleObserver<List<Post>>(){
                     override fun onSuccess(t: List<Post>) {
                         storeInSQLite(t)
-                        Toast.makeText(getApplication(),"Countries From API", Toast.LENGTH_LONG).show()
+                        Toast.makeText(getApplication(),"News Post From API", Toast.LENGTH_LONG).show()
                     }
 
                     override fun onError(e: Throwable) {

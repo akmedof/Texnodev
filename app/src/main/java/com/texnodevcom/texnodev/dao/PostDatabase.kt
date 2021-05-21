@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.texnodevcom.texnodev.dao.PostDAO
 import com.texnodevcom.texnodev.model.Post
 
-@Database(entities = arrayOf(Post::class), version = 1)
+@Database(entities = arrayOf(Post::class), version = 2, exportSchema = false)
 abstract class PostDatabase : RoomDatabase() {
 
     abstract fun postDAO() : PostDAO
@@ -26,7 +26,7 @@ abstract class PostDatabase : RoomDatabase() {
         }
 
         private fun makeDatabase(context: Context) = Room.databaseBuilder(
-                context.applicationContext, PostDatabase::class.java, "postdatabase"
+                context.applicationContext, PostDatabase::class.java, "posts_db"
         ).build()
 
     }

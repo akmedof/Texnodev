@@ -1,16 +1,16 @@
 package com.texnodevcom.texnodev.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.fragment.app.FragmentTransaction
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.texnodevcom.texnodev.R
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +33,18 @@ class MainActivity : AppCompatActivity() {
 
         bottomBar.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+//        bottomBar.setOnNavigationItemSelectedListener(
+//            { item ->
+//                when (item.itemId) {
+//                    R.id.newsFragment,
+//                    R.id.categoryFragment,
+//                    R.id.favoriteFragment,
+//                    R.id.settingFragment -> {
+//                    }
+//                }
+//                true
+//            })
 
     }
 

@@ -12,6 +12,7 @@ import com.texnodevcom.texnodev.R
 import com.texnodevcom.texnodev.adapter.NewsAdapter
 import com.texnodevcom.texnodev.viewmodel.NewsViewModel
 import kotlinx.android.synthetic.main.fragment_news.*
+import kotlinx.android.synthetic.main.fragment_news.view.*
 
 
 class NewsFragment : Fragment() {
@@ -29,6 +30,8 @@ class NewsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+//        val view = inflater.inflate(R.layout.fragment_news, container, false)
+//        view.newsRecyclerView.showShimmer()
         return inflater.inflate(R.layout.fragment_news, container, false)
     }
 
@@ -85,5 +88,13 @@ class NewsFragment : Fragment() {
             }
         })
     }
+
+//    private fun showShimmerEffect(){
+//        mView.newsRecyclerView.showShimmer()
+//    }
+//
+//    private fun hideShimmerEffect(){
+//        mView.newsRecyclerView.hideShimmer()
+//    }
 
 }

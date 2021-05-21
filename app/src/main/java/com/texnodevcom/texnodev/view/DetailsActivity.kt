@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.navArgs
 import com.atilsamancioglu.kotlincountries.util.downloadFromUrl
 import com.atilsamancioglu.kotlincountries.util.placeholderProgressBar
@@ -32,7 +32,7 @@ class DetailsActivity : AppCompatActivity() {
 
         val uuid = argPostID.postUUID
 
-        viewModel = ViewModelProviders.of(this).get(DetailsViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
         viewModel.getPostByID(uuid)
 
         observeLiveData()
@@ -51,7 +51,7 @@ class DetailsActivity : AppCompatActivity() {
             detailsTitle.text = post.title
             detailsDate.text = post.date
             detailsContent.text = Jsoup.parse(post.content).text()
-            detailsImage.downloadFromUrl(post.medium, placeholderProgressBar(applicationContext))
+            detailsImage.downloadFromUrl(post.postImage, placeholderProgressBar(applicationContext))
         }
 
         viewModel.postLiveData.observe(this, post)

@@ -4,8 +4,8 @@ import androidx.recyclerview.widget.DiffUtil
 import com.texnodevcom.texnodev.model.Post
 
 class NewsDiffUtil(
-        private val oldList : List<Post>,
-        private val newList : List<Post>
+    private val oldList : List<Post>,
+    private val newList : List<Post>
 ) : DiffUtil.Callback() {
     override fun getOldListSize(): Int {
         return oldList.size

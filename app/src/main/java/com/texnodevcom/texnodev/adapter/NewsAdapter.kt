@@ -1,24 +1,20 @@
 package com.texnodevcom.texnodev.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.texnodevcom.texnodev.R
-import com.texnodevcom.texnodev.databinding.NewsItemRowBinding
+import com.texnodevcom.texnodev.databinding.PostItemRowBinding
 import com.texnodevcom.texnodev.model.Post
 import com.texnodevcom.texnodev.util.NewsDiffUtil
-import com.texnodevcom.texnodev.viewmodel.NewsViewModel
 
 class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     private var posts = emptyList<Post>()
 
-    class NewsViewHolder(private var binding: NewsItemRowBinding) : RecyclerView.ViewHolder(binding.root){
+    class NewsViewHolder(private var binding: PostItemRowBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(post: Post){
+//            println("POST: " + post.categories + "\n" + post.authorName + "\n" + post.authorImage)
             binding.post = post
             binding.executePendingBindings()
         }
@@ -26,7 +22,7 @@ class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
         companion object{
             fun from(parent: ViewGroup): NewsViewHolder{
                 val inflater = LayoutInflater.from(parent.context)
-                val binding = NewsItemRowBinding.inflate(inflater, parent, false)
+                val binding = PostItemRowBinding.inflate(inflater, parent, false)
                 return NewsViewHolder(binding)
             }
         }
@@ -42,6 +38,7 @@ class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 //        holder.binding.post = posts[position]
         val post = posts[position]
         holder.bind(post)
+        println("AUTHOR: " + post.authorName)
     }
 
     override fun getItemCount(): Int {
