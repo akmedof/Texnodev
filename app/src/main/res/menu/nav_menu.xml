@@ -4,22 +4,18 @@
 
     <item android:id="@+id/newsFragment"
         android:title="Home"
-        android:icon="@drawable/home_news_icon"/>
-
-
-    <item android:id="@+id/favoriteFragment"
-        android:title="Favorite"
-        android:icon="@drawable/favorite_news_icon"/>
+        android:icon="@drawable/home_texnodev"/>
 
     <item android:id="@+id/categoryFragment"
         android:title="Category"
-        android:background="@drawable/bottomnav_bg"
-        android:icon="@drawable/category_news_icon"/>
+        android:icon="@drawable/category_texnodev"/>
+
+    <item android:id="@+id/favoriteFragment"
+        android:title="Favorite"
+        android:icon="@drawable/turned_in_texnodev"/>
 
     <item android:id="@+id/settingFragment"
-        android:title="Setting"
-        android:icon="@drawable/setting_news_icon"
-        android:iconTint="@color/white"
-        android:iconTintMode="multiply"/>
+        android:title="Profil"
+        android:icon="@drawable/account_texnodev"/>
 
 </menu>

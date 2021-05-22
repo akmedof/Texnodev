@@ -24,11 +24,13 @@
     <color name="textColor">#F1F5FA</color>
 
     //Fragment
-    <color name="fragmentBackground">#FFFFFF</color>
+    <color name="fragmentBackground">#F8F8F8</color>
 
+    //Shimmer
+    <color name="shimmerBackground">#FFFFFF</color>
 
     //Bottom Bar Dark
-    <color name="bottomBarBackground">#FFFFFF</color>
+    <color name="bottomBarBackground">#F4F4F4</color>
     <color name="bottomBarSelectIcon">#FF3020</color>
     <color name="bottomBarIcon">#272D50</color>
 

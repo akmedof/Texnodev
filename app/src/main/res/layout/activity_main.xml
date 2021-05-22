@@ -26,6 +26,8 @@
         android:background="@color/bottomBarBackground"
         app:labelVisibilityMode="auto"
         app:itemIconSize="27.5dp"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
         android:autofillHints="@string/app_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
