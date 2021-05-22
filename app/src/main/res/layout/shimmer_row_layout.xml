@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/rowPostCardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="190dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:background="@color/grey"
+            android:layout_width="100dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginStart="15dp"/>
+
+        <View
+            android:background="@color/grey"
+            android:layout_width="125dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginStart="125dp"/>
+
+        <View
+            android:background="@color/grey"
+            android:layout_width="80dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginStart="260dp"/>
+
+        <View
+            android:background="@color/grey"
+            android:layout_width="90dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginStart="15dp"/>
+
+        <View
+            android:background="@color/grey"
+            android:layout_width="100dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginStart="115dp"/>
+
+        <View
+            android:background="@color/grey"
+            android:layout_width="100dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginStart="225dp"/>
+
+        <View
+            android:background="@color/grey"
+            android:layout_width="75dp"
+            android:layout_height="10sp"
+            android:layout_marginTop="240dp"
+            android:layout_marginStart="15dp"/>
+
+        <View
+            android:background="@color/grey"
+            android:layout_width="75dp"
+            android:layout_height="10sp"
+            android:layout_marginTop="240dp"
+            android:layout_marginStart="320dp"/>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

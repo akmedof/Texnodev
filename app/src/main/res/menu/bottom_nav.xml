@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/newsFragment"
+        android:title="Home"
+        android:icon="@drawable/home_news"/>
+
+    <item android:id="@+id/categoryNEWS"
+        android:title="Category"
+        android:icon="@drawable/category_news" />
+
+    <item android:id="@+id/randomFragment"
+        android:title="Random"
+        android:icon="@drawable/random_news"/>
+</menu>
