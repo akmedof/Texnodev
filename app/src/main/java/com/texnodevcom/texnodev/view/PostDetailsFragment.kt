@@ -10,10 +10,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.view.marginBottom
-import androidx.core.view.marginEnd
-import androidx.core.view.marginLeft
-import androidx.core.view.marginTop
+import androidx.core.content.ContextCompat
+import androidx.core.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -40,7 +38,9 @@ class PostDetailsFragment : Fragment() {
     private lateinit var image: ImageView
     private lateinit var conn: Document
     private val list = ArrayList<String>()
+    private val list2 = ArrayList<String>()
     private lateinit var x: Elements
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,17 +69,14 @@ class PostDetailsFragment : Fragment() {
             post?.let {
                 binding.post = it
                 detailsDate.text = getDateTimeDetails(post.date.toString())
-                getHtml(post.content.toString())
+                    getHtml(post.content.toString())
             }
         })
     }
 
     fun adddata() {
         for (l in list) {
-//            l.substring(0, 8)
-            Log.i("aaa", l.substring(0, 8))
             if (l.substring(0, 8) == "https://") {
-                Log.d("urr", l)
                 img(l)
             } else {
                 textvieww(l)
@@ -109,12 +106,13 @@ class PostDetailsFragment : Fragment() {
 
     fun textvieww(text: String?) {
         val textView = TextView(requireContext())
-        textView.textSize = 15F
-        textView.setTextColor(Color.WHITE)
+        textView.textSize = 17.5F
+        textView.setPadding(5)
+        textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.detailsContentColor))
+        textView.setPadding(5)
         textView.text = text
         detailsLinearLayout.addView(textView)
     }
-
 
     fun getHtml(html: String) {
         try {
@@ -128,6 +126,7 @@ class PostDetailsFragment : Fragment() {
                 } else {
                     list.add(k.text())
                 }
+                list2.add(k.toString())
             }
             adddata()
         }catch (e: Exception){

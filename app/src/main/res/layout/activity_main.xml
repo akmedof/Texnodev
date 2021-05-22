@@ -23,7 +23,7 @@
         app:menu="@menu/nav_menu"
         app:itemIconTint="@drawable/item_selector"
         app:itemTextColor="@drawable/item_selector"
-        android:background="@drawable/bottomnav_bg"
+        android:background="@color/bottomBarBackground"
         app:labelVisibilityMode="auto"
         app:itemIconSize="27.5dp"
         android:autofillHints="@string/app_name"
