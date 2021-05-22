@@ -1,6 +1,7 @@
 package com.texnodevcom.texnodev.view
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -34,17 +35,14 @@ class MainActivity : AppCompatActivity() {
         bottomBar.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-//        bottomBar.setOnNavigationItemSelectedListener(
-//            { item ->
-//                when (item.itemId) {
-//                    R.id.newsFragment,
-//                    R.id.categoryFragment,
-//                    R.id.favoriteFragment,
-//                    R.id.settingFragment -> {
-//                    }
-//                }
-//                true
-//            })
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.postDetailsFragment -> bottomBar.visibility = View.GONE
+//                R.id.categoryFragment -> bottomBar.visibility = View.GONE
+                else -> bottomBar.visibility = View.VISIBLE
+            }
+        }
+
 
     }
 

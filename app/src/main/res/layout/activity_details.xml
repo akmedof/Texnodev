@@ -76,9 +76,11 @@
                 android:id="@+id/detailsContent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:text="Content"
                 android:textSize="17.5dp"
-                android:layout_margin="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detailsDate" />
         </androidx.constraintlayout.widget.ConstraintLayout>

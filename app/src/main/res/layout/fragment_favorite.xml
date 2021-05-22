@@ -6,11 +6,11 @@
     tools:context=".view.FavoriteFragment">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Favorite Fragment"
-        android:textSize="30sp"
-        android:gravity="center"/>
+    <ImageView
+        android:id="@+id/imgTest"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_launcher_background"/>
 
 </FrameLayout>

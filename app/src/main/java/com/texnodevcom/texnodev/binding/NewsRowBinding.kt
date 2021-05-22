@@ -23,10 +23,12 @@ class NewsRowBinding {
 
         @BindingAdapter("onPostClickListener")
         @JvmStatic
-        fun onPostClickListener(rowPostLayout: ConstraintLayout, postID: Int){
+        fun onPostClickListener(rowPostLayout: ConstraintLayout, id: Int){
             rowPostLayout.setOnClickListener {
                 try {
-                    val action = NewsFragmentDirections.actionNewsFragmentToDetailsActivity(postID)
+//                    val action = NewsFragmentDirections.actionNewsFragmentToDetailsActivity(postID)
+//                    rowPostLayout.findNavController().navigate(action)
+                    val action = NewsFragmentDirections.actionNewsFragmentToPostDetailsFragment(id)
                     rowPostLayout.findNavController().navigate(action)
                 }catch (e: Exception){
                     Log.d("onPostClickListener", e.toString())

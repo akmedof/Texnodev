@@ -19,6 +19,7 @@ class NewsFragment : Fragment() {
 
     private lateinit var viewModel : NewsViewModel
     private val newsAdapter = NewsAdapter()
+    private lateinit var mView : View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +30,10 @@ class NewsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-//        val view = inflater.inflate(R.layout.fragment_news, container, false)
+//         Inflate the layout for this fragment
+        mView = inflater.inflate(R.layout.fragment_news, container, false)
 //        view.newsRecyclerView.showShimmer()
-        return inflater.inflate(R.layout.fragment_news, container, false)
+        return mView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,9 +46,7 @@ class NewsFragment : Fragment() {
         newsRecyclerView.adapter = newsAdapter
 
         swipeRefreshLayout.setOnRefreshListener {
-            newsRecyclerView.visibility = View.GONE
             newsError.visibility = View.GONE
-            newsLoading.visibility = View.VISIBLE
             viewModel.refreshFromAPI()
             swipeRefreshLayout.isRefreshing = false
         }
@@ -62,6 +61,7 @@ class NewsFragment : Fragment() {
             posts?.let {
                 newsRecyclerView.visibility = View.VISIBLE
                 newsAdapter.updateCountryList(posts)
+                hideShimmerEffect()
             }
 
         })
@@ -79,22 +79,22 @@ class NewsFragment : Fragment() {
         viewModel.postLoading.observe(viewLifecycleOwner, Observer { loading->
             loading?.let {
                 if (it) {
-                    newsLoading.visibility = View.VISIBLE
-                    newsRecyclerView.visibility = View.GONE
+                    showShimmerEffect()
                     newsError.visibility = View.GONE
                 } else {
-                    newsLoading.visibility = View.GONE
+//                    newsLoading.visibility = View.GONE
+                    hideShimmerEffect()
                 }
             }
         })
     }
 
-//    private fun showShimmerEffect(){
-//        mView.newsRecyclerView.showShimmer()
-//    }
-//
-//    private fun hideShimmerEffect(){
-//        mView.newsRecyclerView.hideShimmer()
-//    }
+    private fun showShimmerEffect(){
+        mView.newsRecyclerView.showShimmer()
+    }
+
+    private fun hideShimmerEffect(){
+        mView.newsRecyclerView.hideShimmer()
+    }
 
 }

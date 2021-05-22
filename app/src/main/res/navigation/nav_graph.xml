@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_newsFragment_to_detailsActivity"
             app:destination="@id/detailsActivity" />
+        <action
+            android:id="@+id/action_newsFragment_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment" />
     </fragment>
     <activity
         android:id="@+id/detailsActivity"
@@ -39,4 +42,17 @@
         android:name="com.texnodevcom.texnodev.view.SettingFragment"
         android:label="Setting"
         tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/postDetailsFragment"
+        android:name="com.texnodevcom.texnodev.view.PostDetailsFragment"
+        android:label="fragment_post_details"
+        tools:layout="@layout/fragment_post_details" >
+        <action
+            android:id="@+id/action_postDetailsFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <argument
+            android:name="postID"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>
