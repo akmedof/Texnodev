@@ -12,7 +12,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bgrow"
         tools:context=".view.PostDetailsFragment">
 
         <androidx.core.widget.NestedScrollView
@@ -26,7 +25,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/fragmentBackground">
 
 
                 <ImageView
@@ -34,9 +34,9 @@
                     android:layout_width="400dp"
                     android:layout_height="225dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
                     android:downloadUrl="@{post.postImage}"
                     android:scaleType="centerCrop"
-                    android:src="@color/cardview_dark_background"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@{post.authorName}"
-                    android:textColor="@color/detailsTitleColor"
+                    android:textColor="@color/detailsNameColor"
                     android:textSize="17.5sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/cardView"
@@ -80,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="7.5dp"
-                    android:textColor="@color/grey"
+                    android:textColor="@color/detailsDateColor"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/detailsImage" />
 

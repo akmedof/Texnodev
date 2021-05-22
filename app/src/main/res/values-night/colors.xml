@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //Fragment
+    <color name="fragmentBackground">#1D223C</color>
+
+    //Bottom Bar Dark
+    <color name="bottomBarBackground">#1F2442</color>
+    <color name="bottomBarSelectIcon">#FF3020</color>
+    <color name="bottomBarIcon">#E9FFFFFF</color>
+
+    //Card View Dark
+    <color name="cardViewBackground">#242A46</color>
+    <color name="cardViewTitleColor">#F1F5FA</color>
+    <color name="cardViewDateColor">#D8B5BAD3</color>
+
+    //Details Fragment Dark
+    <color name="detailsBackground">#242A46</color>
+    <color name="detailsTitleColor">#F1F5FA</color>
+    <color name="detailsNameColor">#BBC1E3</color>
+    <color name="detailsDateColor">#D8B5BAD3</color>
+    <color name="detailsContentColor">#EEF0F0F8</color>
+
+
+</resources>

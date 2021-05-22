@@ -23,22 +23,26 @@
     <color name="shimmerviewbg">#97B8C1CA</color>
     <color name="textColor">#F1F5FA</color>
 
+    //Fragment
+    <color name="fragmentBackground">#FFFFFF</color>
+
+
     //Bottom Bar Dark
-    <color name="bottomBarBackground">#242A46</color>
+    <color name="bottomBarBackground">#FFFFFF</color>
     <color name="bottomBarSelectIcon">#FF3020</color>
-    <color name="bottomBarIcon">#EDEEF3</color>
+    <color name="bottomBarIcon">#272D50</color>
 
     //Card View Dark
-    <color name="cardViewBackground">#242A46</color>
-    <color name="cardViewTitleColor">#F1F5FA</color>
-    <color name="cardViewDateColor">#D8B5BAD3</color>
+    <color name="cardViewBackground">#FFFFFF</color>
+    <color name="cardViewTitleColor">#FF3020</color>
+    <color name="cardViewDateColor">#D83D4465</color>
 
     //Details Fragment Dark
-    <color name="detailsBackground">#242A46</color>
-    <color name="detailsTitleColor">#F1F5FA</color>
-    <color name="detailsNameColor">#F1F5FA</color>
-    <color name="detailsDateColor">#D8B5BAD3</color>
-    <color name="detailsContentColor">#D8525255</color>
+    <color name="detailsBackground">#FFFFFF</color>
+    <color name="detailsTitleColor">#FF3020</color>
+    <color name="detailsNameColor">#008EFF</color>
+    <color name="detailsDateColor">#272D50</color>
+    <color name="detailsContentColor">#D81A1A32</color>
 
 
 
