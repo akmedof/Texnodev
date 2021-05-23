@@ -3,23 +3,34 @@ package com.texnodevcom.texnodev.binding
 import android.net.ParseException
 import android.util.Log
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
 import androidx.navigation.findNavController
 import com.atilsamancioglu.kotlincountries.util.downloadFromUrl
 import com.atilsamancioglu.kotlincountries.util.placeholderProgressBar
-import com.google.android.material.card.MaterialCardView
-import com.texnodevcom.texnodev.model.Post
+import com.texnodevcom.texnodev.R
 import com.texnodevcom.texnodev.view.NewsFragmentDirections
 import java.text.SimpleDateFormat
 import java.util.*
 
 class NewsRowBinding {
 
+
     companion object {
 
+        val userFoto = "https://secure.gravatar.com/avatar/8d284c2b438d80d134bbd866b38dca86?s=96&#038;d=blank&#038;r=g"
+
+        @BindingAdapter("android:downloadUserUrl")
+        @JvmStatic
+        fun downloadUserImage(view: ImageView, url:String?) {
+            if (url.equals(userFoto)){
+                view.setImageResource(R.drawable.user)
+            }else{
+                view.downloadFromUrl(url, placeholderProgressBar(view.context))
+            }
+
+        }
 
         @BindingAdapter("onPostClickListener")
         @JvmStatic

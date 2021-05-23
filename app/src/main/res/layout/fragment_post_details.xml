@@ -63,7 +63,7 @@
                         android:id="@+id/detailsAuthorImg"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:downloadUrl="@{post.authorImage}"
+                        android:downloadUserUrl="@{post.authorImage}"
                         tools:layout_editor_absoluteY="254dp"
                         tools:src="@tools:sample/avatars" />
 

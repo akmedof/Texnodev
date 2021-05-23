@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             R.id.newsFragment,
             R.id.favoriteFragment,
             R.id.categoryFragment,
-            R.id.settingFragment
         ))
 
         bottomBar.setupWithNavController(navController)
@@ -40,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.postDetailsFragment -> bottomBar.visibility = View.GONE
-//                R.id.categoryFragment -> bottomBar.visibility = View.GONE
+                R.id.settingFragment -> bottomBar.visibility = View.GONE
                 else -> bottomBar.visibility = View.VISIBLE
             }
         }
