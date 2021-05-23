@@ -26,23 +26,26 @@
     //Fragment
     <color name="fragmentBackground">#F8F8F8</color>
 
+    //ToolBar
+    <color name="toolBarBackground">#EA004A</color>
+
     //Shimmer
     <color name="shimmerBackground">#FFFFFF</color>
 
     //Bottom Bar Dark
-    <color name="bottomBarBackground">#F4F4F4</color>
-    <color name="bottomBarSelectIcon">#FF3020</color>
-    <color name="bottomBarIcon">#272D50</color>
+    <color name="bottomBarBackground">#EA004A</color>
+    <color name="bottomBarSelectIcon">#E9FFFFFF</color>
+    <color name="bottomBarIcon">#E9FFFFFF</color>
 
     //Card View Dark
     <color name="cardViewBackground">#FFFFFF</color>
-    <color name="cardViewTitleColor">#FF3020</color>
+    <color name="cardViewTitleColor">#2C3461</color>
     <color name="cardViewDateColor">#D83D4465</color>
 
     //Details Fragment Dark
     <color name="detailsBackground">#FFFFFF</color>
-    <color name="detailsTitleColor">#FF3020</color>
-    <color name="detailsNameColor">#008EFF</color>
+    <color name="detailsTitleColor">#E6E6E6</color>
+    <color name="detailsNameColor">#25306E</color> //FF4E16
     <color name="detailsDateColor">#272D50</color>
     <color name="detailsContentColor">#D81A1A32</color>
 

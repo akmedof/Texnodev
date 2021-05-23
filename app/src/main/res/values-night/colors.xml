@@ -4,9 +4,12 @@
     //Fragment
     <color name="fragmentBackground">#1D223C</color>
 
+    //ToolBar
+    <color name="toolBarBackground">#13193A</color>
+
     //Bottom Bar Dark
-    <color name="bottomBarBackground">#1F2442</color>
-    <color name="bottomBarSelectIcon">#FF3020</color>
+    <color name="bottomBarBackground">#13193A</color>
+    <color name="bottomBarSelectIcon">#F90955</color>
     <color name="bottomBarIcon">#E9FFFFFF</color>
 
     //Card View Dark
@@ -16,8 +19,8 @@
 
     //Details Fragment Dark
     <color name="detailsBackground">#242A46</color>
-    <color name="detailsTitleColor">#F1F5FA</color>
-    <color name="detailsNameColor">#BBC1E3</color>
+    <color name="detailsTitleColor">#E6E6E6</color>
+    <color name="detailsNameColor">#FF4E16</color>
     <color name="detailsDateColor">#D8B5BAD3</color>
     <color name="detailsContentColor">#EEF0F0F8</color>
 

@@ -90,15 +90,15 @@ class PostDetailsFragment : Fragment() {
         val lp = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.WRAP_CONTENT,
             LinearLayout.LayoutParams.WRAP_CONTENT)
-        lp.setMargins(10, 5, 10, 5)
+//        lp.setMargins(10, 5, 10, 5)
         img.setLayoutParams(lp)
-        img.marginTop
-        img.marginBottom
-        img.marginEnd
-        img.marginLeft
+//        img.marginTop
+//        img.marginBottom
+//        img.marginEnd
+//        img.marginLeft
         img.setImageResource(R.drawable.ic_launcher_background)
-        img.getLayoutParams().height = 1000;
-        img.getLayoutParams().width = 1000;
+        img.getLayoutParams().height = 675;
+        img.getLayoutParams().width = 1050;
 
         img.downloadFromUrl(url, placeholderProgressBar(requireContext()))
         detailsLinearLayout.addView(img)
@@ -107,9 +107,9 @@ class PostDetailsFragment : Fragment() {
     fun textvieww(text: String?) {
         val textView = TextView(requireContext())
         textView.textSize = 17.5F
-        textView.setPadding(5)
+//        textView.setPadding(5)
         textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.detailsContentColor))
-        textView.setPadding(5)
+//        textView.setPadding(5)
         textView.text = text
         detailsLinearLayout.addView(textView)
     }
