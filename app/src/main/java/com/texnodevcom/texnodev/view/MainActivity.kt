@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             when (destination.id) {
                 R.id.postDetailsFragment -> bottomBar.visibility = View.GONE
                 R.id.accountFragment -> bottomBar.visibility = View.GONE
+                R.id.privacyFragment -> bottomBar.visibility = View.GONE
                 else -> bottomBar.visibility = View.VISIBLE
             }
         }

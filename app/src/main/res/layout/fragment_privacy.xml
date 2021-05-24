@@ -3,64 +3,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     android:orientation="vertical"
+    android:background="@color/fragmentBackground"
     tools:context=".view.PrivacyFragment">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Məxfilik Razılaşması"
-            android:textSize="25sp"
-            android:textStyle="bold"/>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bu 'Məxfilik Müqaviləsi', www.texnodev.com veb saytını ziyarət etmiş və mobil tətbiqetmələri 02.01.2021 tarixində və ondan sonra yükləyən bütün istifadəçilər üçün etibarlıdır. Sayt və tətbiqetmə vasitəsi ilə təklif olunan xidmətlərdən faydalanmağı xahiş edərək, bu Məxfilik Müqaviləsindəki şərtləri qəbul etdiyiniz hesab olunur."
-            android:textSize="17.5sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
 
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Şəxsi Məlumatların Təhlükəsizliyi"
-            android:textSize="25sp"
-            android:textStyle="bold"/>
+                        <ImageView
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:src="@drawable/privacy_policy"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Şəxsi məlumatlarınızı paylaşmadan www.texnodev.com və mobil tətbiqetməsinə baxa bilərsiniz."
-            android:textSize="17.5sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Məxfilik Razılaşması"
+                            android:textColor="@color/privacyName"
+                            android:textSize="25sp"
+                            android:textStyle="bold"/>
 
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cookies"
-            android:textSize="25sp"
-            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/privacyDesc"
+                            android:text="Bu 'Məxfilik Müqaviləsi', www.texnodev.com veb saytını ziyarət etmiş və mobil tətbiqetmələri 02.01.2021 tarixində və ondan sonra yükləyən bütün istifadəçilər üçün etibarlıdır. Sayt və tətbiqetmə vasitəsi ilə təklif olunan xidmətlərdən faydalanmağı xahiş edərək, bu Məxfilik Müqaviləsindəki şərtləri qəbul etdiyiniz hesab olunur."
+                            android:textSize="17.5sp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="www.texnodev.com veb saytında və mobil tətbiqetmələrdə xidmətlərin və məzmunun effektivliyini ölçmək üçün sabit diskinizdə çerezlərdən istifadə edirik. İstifadəçi üstünlük verərsə, istifadə etdiyi brauzeri veb səhifədən bu çərəzləri qəbul etməməsi üçün ayarlıya bilər."
-            android:textSize="17.5sp"/>
+                        <TextView
+                            android:layout_marginTop="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/privacyName"
+                            android:text="Şəxsi Məlumatların Təhlükəsizliyi"
+                            android:textSize="25sp"
+                            android:textStyle="bold"/>
 
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Təhlükəsizlik"
-            android:textSize="25sp"
-            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/privacyDesc"
+                            android:text="Şəxsi məlumatlarınızı paylaşmadan www.texnodev.com və mobil tətbiqetməsinə baxa bilərsiniz."
+                            android:textSize="17.5sp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="www.politikyol.com veb saytı və mobil tətbiqetmə ilə paylaşdığınız hər cür məlumat fiziki və faktiki olaraq müxtəlif vasitələrlə icazəsiz girişdən qorunur."
-            android:textSize="17.5sp"/>
+                        <TextView
+                            android:layout_marginTop="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/privacyName"
+                            android:text="Cookies"
+                            android:textSize="25sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/privacyDesc"
+                            android:text="www.texnodev.com veb saytında və mobil tətbiqetmələrdə xidmətlərin və məzmunun effektivliyini ölçmək üçün sabit diskinizdə çerezlərdən istifadə edirik. İstifadəçi üstünlük verərsə, istifadə etdiyi brauzeri veb səhifədən bu çərəzləri qəbul etməməsi üçün ayarlıya bilər."
+                            android:textSize="17.5sp"/>
+
+                        <TextView
+                            android:layout_marginTop="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/privacyName"
+                            android:textSize="25sp"
+                            android:text="Təhlükəsizlik"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/privacyDesc"
+                            android:text="www.politikyol.com veb saytı və mobil tətbiqetmə ilə paylaşdığınız hər cür məlumat fiziki və faktiki olaraq müxtəlif vasitələrlə icazəsiz girişdən qorunur."
+                            android:textSize="17.5sp"/>
+
+
+                </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
 
 </LinearLayout>

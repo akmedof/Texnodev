@@ -51,6 +51,9 @@
     <color name="switchTrack">#2196F3</color>
     <color name="switchThumb">#F90955</color>
     <color name="button_background_color">#1DA1D2</color>
+    <color name="cardViewAccount">#D8F7F8FB</color>
+    <color name="accountName">#2C3461</color>
+    <color name="accountDesc">#D83D4465</color>
 
 
     //About Dialog
@@ -58,6 +61,9 @@
     <color name="aboutVersion">#D83D4465</color>
     <color name="aboutDesc">#D84C526E</color>
 
+    //Fragment Privacy
+    <color name="privacyName">#2C3461</color>
+    <color name="privacyDesc">#D83D4465</color>
 
 
 </resources>

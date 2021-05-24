@@ -50,7 +50,7 @@
     <fragment
         android:id="@+id/privacyFragment"
         android:name="com.texnodevcom.texnodev.view.PrivacyFragment"
-        android:label="fragment_privacy"
+        android:label="Gizlilik Siyasəti"
         tools:layout="@layout/fragment_privacy" >
         <action
             android:id="@+id/action_privacyFragment_to_accountFragment"
