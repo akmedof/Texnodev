@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.postDetailsFragment -> bottomBar.visibility = View.GONE
-                R.id.settingFragment -> bottomBar.visibility = View.GONE
+                R.id.accountFragment -> bottomBar.visibility = View.GONE
                 else -> bottomBar.visibility = View.VISIBLE
             }
         }

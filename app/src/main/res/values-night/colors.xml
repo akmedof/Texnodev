@@ -25,4 +25,17 @@
     <color name="detailsContentColor">#EEF0F0F8</color>
 
 
+    //Account Fragment Dark Mod Bottom
+    <color name="text_color">#ffffff</color>
+    <color name="hint_text_color">#F88909</color>
+    <color name="switchTrack">#ffffff</color>
+    <color name="switchThumb">#1DA1D2</color>
+    <color name="button_background_color">#F88909</color>
+
+    //About Dialog
+    <color name="aboutName">#F1F5FA</color>
+    <color name="aboutVersion">#D8D7D9E3</color>
+    <color name="aboutDesc">#D8B5BAD3</color>
+
+
 </resources>

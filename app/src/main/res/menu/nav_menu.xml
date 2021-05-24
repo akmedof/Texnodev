@@ -14,7 +14,7 @@
         android:title="Favorite"
         android:icon="@drawable/turned_in_texnodev"/>
 
-    <item android:id="@+id/settingFragment"
+    <item android:id="@+id/accountFragment"
         android:title="Profil"
         android:icon="@drawable/account_texnodev"/>
 

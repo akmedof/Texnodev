@@ -26,10 +26,14 @@
         android:label="Category"
         tools:layout="@layout/fragment_category" />
     <fragment
-        android:id="@+id/settingFragment"
-        android:name="com.texnodevcom.texnodev.view.SettingFragment"
-        android:label="Setting"
-        tools:layout="@layout/fragment_setting" />
+        android:id="@+id/accountFragment"
+        android:name="com.texnodevcom.texnodev.view.AccountFragment"
+        android:label="Profil"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_privacyFragment"
+            app:destination="@id/privacyFragment" />
+    </fragment>
     <fragment
         android:id="@+id/postDetailsFragment"
         android:name="com.texnodevcom.texnodev.view.PostDetailsFragment"
@@ -42,5 +46,14 @@
             android:name="postID"
             app:argType="integer"
             android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="com.texnodevcom.texnodev.view.PrivacyFragment"
+        android:label="fragment_privacy"
+        tools:layout="@layout/fragment_privacy" >
+        <action
+            android:id="@+id/action_privacyFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
     </fragment>
 </navigation>

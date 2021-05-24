@@ -3,6 +3,7 @@ package com.texnodevcom.texnodev.binding
 import android.net.ParseException
 import android.util.Log
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
@@ -10,6 +11,7 @@ import androidx.navigation.findNavController
 import com.atilsamancioglu.kotlincountries.util.downloadFromUrl
 import com.atilsamancioglu.kotlincountries.util.placeholderProgressBar
 import com.texnodevcom.texnodev.R
+import com.texnodevcom.texnodev.view.AccountFragmentDirections
 import com.texnodevcom.texnodev.view.NewsFragmentDirections
 import java.text.SimpleDateFormat
 import java.util.*

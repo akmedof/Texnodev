@@ -9,11 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#E91E63</color>
 
-    <!--Bottom Navigation Icon Color-->
-    <color name="homeF">#E91E63</color>
-    <color name="categoryF">#03A9F4</color>
-    <color name="favoriteF">#FFEB3B</color>
-    <color name="settingF">#FF5722</color>
+    //-----------------------------------------------
 
     <color name="grey">#A6B2B6</color>
     <color name="cate">#229DFF</color>
@@ -48,6 +44,19 @@
     <color name="detailsNameColor">#25306E</color> //FF4E16
     <color name="detailsDateColor">#272D50</color>
     <color name="detailsContentColor">#D81A1A32</color>
+
+    //Account Fragment Dark Mod Bottom
+    <color name="text_color">#191919</color>
+    <color name="hint_text_color">#1DA1D2</color>
+    <color name="switchTrack">#2196F3</color>
+    <color name="switchThumb">#F90955</color>
+    <color name="button_background_color">#1DA1D2</color>
+
+
+    //About Dialog
+    <color name="aboutName">#2C3461</color>
+    <color name="aboutVersion">#D83D4465</color>
+    <color name="aboutDesc">#D84C526E</color>
 
 
 

@@ -8,6 +8,27 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="accountFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="17" />
+                            <option name="y" value="-229" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_accountFragment_to_privacyFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="categoryFragment">
                     <value>
                       <LayoutPositions>
@@ -15,18 +36,6 @@
                           <Point>
                             <option name="x" value="-328" />
                             <option name="y" value="130" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="detailsActivity">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-212" />
-                            <option name="y" value="-168" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -55,7 +64,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_newsFragment_to_detailsActivity">
+                            <entry key="action_newsFragment_to_postDetailsFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -74,16 +83,25 @@
                             <option name="y" value="-175" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_postDetailsFragment_to_newsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="settingFragment">
+                  <entry key="privacyFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-69" />
-                            <option name="y" value="128" />
+                            <option name="x" value="-187" />
+                            <option name="y" value="-250" />
                           </Point>
                         </option>
                       </LayoutPositions>

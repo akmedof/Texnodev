@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/aboutCardView"
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:layout_marginTop="20sp"
+               app:cardCornerRadius="100dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" >
+
+               <ImageView
+                   android:src="@drawable/logo_texnodev"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"/>
+
+           </androidx.cardview.widget.CardView>
+
+           <TextView
+               android:id="@+id/textView4"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Texnodev"
+               android:layout_margin="5dp"
+               android:textSize="20sp"
+               android:textStyle="bold"
+               android:textColor="@color/aboutName"
+               app:layout_constraintEnd_toEndOf="@+id/aboutCardView"
+               app:layout_constraintStart_toStartOf="@+id/aboutCardView"
+               app:layout_constraintTop_toBottomOf="@+id/aboutCardView" />
+
+           <TextView
+               android:id="@+id/textView5"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="1.0.0"
+               android:textStyle="bold"
+               android:textColor="@color/aboutVersion"
+               app:layout_constraintEnd_toEndOf="@+id/textView4"
+               app:layout_constraintStart_toStartOf="@+id/textView4"
+               app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:padding="5dp"
+               android:textColor="@color/aboutDesc"
+               android:text="Copyright © Azero Soft\n      All right reserved"
+               app:layout_constraintEnd_toEndOf="@+id/textView4"
+               app:layout_constraintStart_toStartOf="@+id/textView4"
+               app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
