@@ -31,7 +31,7 @@
         android:textColor="@color/accountName"
         android:layout_margin="15dp"
         android:padding="5dp"
-        android:text="Tezliklə giriş \n edə biləsiz"
+        android:text="Tezliklə istifadəçi \nQeydiyyatı"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/cardView2"
