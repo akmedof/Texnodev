@@ -2,11 +2,16 @@ package com.texnodevcom.texnodev.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.request.target.DrawableImageViewTarget
+import com.texnodevcom.texnodev.R
 import com.texnodevcom.texnodev.databinding.PostItemRowBinding
 import com.texnodevcom.texnodev.model.Post
 import com.texnodevcom.texnodev.util.NewsDiffUtil
+import kotlinx.android.synthetic.main.post_item_row.view.*
+import kotlin.coroutines.coroutineContext
 
 class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
@@ -35,10 +40,15 @@ class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-//        holder.binding.post = posts[position]
         val post = posts[position]
         holder.bind(post)
-        println("AUTHOR: " + post.authorName)
+        val imgRes = holder.itemView.turnedFavID.drawable
+        val turned = R.drawable.turned_in_not_favorite
+        holder.itemView.turnedFavID.setOnClickListener {
+            val imgRes = holder.itemView.turnedFavID.resources.toString()
+
+               holder.itemView.turnedFavID.setImageResource(R.drawable.turned_in_texnodev)
+        }
     }
 
     override fun getItemCount(): Int {

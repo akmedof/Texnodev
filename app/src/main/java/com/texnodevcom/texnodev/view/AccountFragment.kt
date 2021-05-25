@@ -1,6 +1,8 @@
 package com.texnodevcom.texnodev.view
 
+import android.content.Intent
 import android.content.res.Configuration
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -42,6 +44,28 @@ class AccountFragment : Fragment() {
 
         setOnClickPrivacy()
 
+        setOnClickSocialMedia()
+
+    }
+
+    private fun setOnClickSocialMedia(){
+        accInstagramID.setOnClickListener {
+            gotoURL("https://www.instagram.com/texnodev")
+        }
+        accTelegramID.setOnClickListener {
+            gotoURL("https://www.t.me/texnodev")
+        }
+        accTwitterID.setOnClickListener {
+            gotoURL("https://www.twitter.com/texnodev")
+        }
+        accFacebookID.setOnClickListener {
+            gotoURL("https://www.facebook.com/texnodevcom")
+        }
+    }
+
+    private fun gotoURL(s: String) {
+        val uri = Uri.parse(s)
+        startActivity(Intent(Intent.ACTION_VIEW, uri))
     }
 
     private fun darkMode(){

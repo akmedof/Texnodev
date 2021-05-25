@@ -6,9 +6,6 @@
     tools:context=".view.FavoriteFragment"
     android:background="@color/fragmentBackground">
 
-
-
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -18,15 +15,14 @@
             android:orientation="vertical"
             android:layout_margin="5dp"
             android:id="@+id/linLay">
-            <ImageView
-                android:id="@+id/imgTest"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_background"/>
 
-
-
+            <TextView
+                android:id="@+id/favoritePostID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID: "
+                android:textSize="30sp"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 

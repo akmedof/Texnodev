@@ -83,7 +83,16 @@
                     app:layout_constraintTop_toBottomOf="@+id/rowPostTitle"
                     app:srcCompat="@drawable/date_time_row" />
 
-<!--                <TextView-->
+                <ImageView
+                    android:id="@+id/turnedFavID"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/turned_in_not_favorite" />
+
+                <!--                <TextView-->
 <!--                    android:id="@+id/rowPostCategory"-->
 <!--                    android:layout_width="wrap_content"-->
 <!--                    android:layout_height="wrap_content"-->

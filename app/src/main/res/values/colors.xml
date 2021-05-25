@@ -37,6 +37,7 @@
     <color name="cardViewBackground">#FFFFFF</color>
     <color name="cardViewTitleColor">#2C3461</color>
     <color name="cardViewDateColor">#D83D4465</color>
+    <color name="cardViewFavIcon">#EA004A</color>
 
     //Details Fragment Dark
     <color name="detailsBackground">#FFFFFF</color>
