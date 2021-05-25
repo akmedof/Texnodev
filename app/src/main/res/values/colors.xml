@@ -46,6 +46,9 @@
     <color name="detailsDateColor">#272D50</color>
     <color name="detailsContentColor">#D81A1A32</color>
 
+    //Favorite Fragment
+    <color name="favTitle">#25306E</color> //FF4E16
+
     //Account Fragment Dark Mod Bottom
     <color name="text_color">#191919</color>
     <color name="hint_text_color">#1DA1D2</color>
