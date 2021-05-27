@@ -1,27 +1,36 @@
 package com.texnodevcom.texnodev.binding
 
+import android.app.Application
 import android.net.ParseException
 import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.atilsamancioglu.kotlincountries.util.downloadFromUrl
 import com.atilsamancioglu.kotlincountries.util.placeholderProgressBar
 import com.texnodevcom.texnodev.R
 import com.texnodevcom.texnodev.view.AccountFragmentDirections
+import com.texnodevcom.texnodev.view.FavoriteFragmentDirections
 import com.texnodevcom.texnodev.view.NewsFragmentDirections
+import com.texnodevcom.texnodev.viewmodel.BaseViewModel
+import com.texnodevcom.texnodev.viewmodel.FavoriteViewModel
+import com.texnodevmedia.texnodev.dao.PostDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 
-class NewsRowBinding {
+class NewsRowBinding(application: Application) : BaseViewModel(application) {
 
 
     companion object {
 
         val userFoto = "https://secure.gravatar.com/avatar/8d284c2b438d80d134bbd866b38dca86?s=96&#038;d=blank&#038;r=g"
+        private lateinit var viewModelFav : FavoriteViewModel
 
         @BindingAdapter("android:downloadUserUrl")
         @JvmStatic
@@ -34,13 +43,24 @@ class NewsRowBinding {
 
         }
 
+        @BindingAdapter("onFavoriteClickListener")
+        @JvmStatic
+        fun onFavoriteClickListener(rowPostLayout: ConstraintLayout, id: Int){
+            rowPostLayout.setOnClickListener {
+                try {
+                    val action = FavoriteFragmentDirections.actionFavoriteFragmentToPostDetailsFragment(id)
+                    rowPostLayout.findNavController().navigate(action)
+                }catch (e: Exception){
+                    Log.d("onFavoriteClickListener", e.toString())
+                }
+            }
+        }
+
         @BindingAdapter("onPostClickListener")
         @JvmStatic
         fun onPostClickListener(rowPostLayout: ConstraintLayout, id: Int){
             rowPostLayout.setOnClickListener {
                 try {
-//                    val action = NewsFragmentDirections.actionNewsFragmentToDetailsActivity(postID)
-//                    rowPostLayout.findNavController().navigate(action)
                     val action = NewsFragmentDirections.actionNewsFragmentToPostDetailsFragment(id)
                     rowPostLayout.findNavController().navigate(action)
                 }catch (e: Exception){

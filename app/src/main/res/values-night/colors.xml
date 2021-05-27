@@ -18,6 +18,11 @@
     <color name="cardViewDateColor">#D8B5BAD3</color>
     <color name="cardViewFavIcon">#EA004A</color>
 
+    //Favorite Row Item
+    <color name="favRowBackground">#242A46</color>
+    <color name="favRowTitleColor">#F1F5FA</color>
+    <color name="favRowDateColor">#D8B5BAD3</color>
+
     //Details Fragment Dark
     <color name="detailsBackground">#242A46</color>
     <color name="detailsTitleColor">#E6E6E6</color>

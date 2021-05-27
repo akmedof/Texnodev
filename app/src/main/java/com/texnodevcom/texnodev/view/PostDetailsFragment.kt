@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.*
 import androidx.databinding.DataBindingUtil
@@ -65,11 +66,32 @@ class PostDetailsFragment : Fragment() {
 
         viewModel.getPostByID(id)
 
+//        observerLiveDataFavorite()
+
+        observerLiveDataPost()
+    }
+
+    private fun observerLiveDataFavorite() {
+        TODO("Not yet implemented")
+    }
+
+    private fun observerLiveDataPost(){
         viewModel.postLiveData.observe(viewLifecycleOwner, Observer { post ->
             post?.let {
                 binding.post = it
                 detailsDate.text = getDateTimeDetails(post.date.toString())
-                    getHtml(post.content.toString())
+                getHtml(post.content.toString())
+
+                detailsFavorite.setOnCheckedChangeListener { buttonView, isChecked ->
+                    if (detailsFavorite.isChecked){
+                        viewModel.insertFAV(post)
+                        detailsFavorite.setButtonDrawable(R.drawable.turned_in_texnodev)
+                        Toast.makeText(requireContext(), "Elave Olundu", Toast.LENGTH_LONG).show()
+                    }else{
+                        detailsFavorite.setButtonDrawable(R.drawable.turned_in_not_favorite)
+                        Toast.makeText(requireContext(), "Error", Toast.LENGTH_LONG).show()
+                    }
+                }
             }
         })
     }
@@ -83,7 +105,6 @@ class PostDetailsFragment : Fragment() {
             }
         }
     }
-
 
     fun img(url: String?) {
         val img = ImageView(requireContext())

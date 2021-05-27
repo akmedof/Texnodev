@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +14,8 @@ import com.texnodevcom.texnodev.adapter.NewsAdapter
 import com.texnodevcom.texnodev.viewmodel.NewsViewModel
 import kotlinx.android.synthetic.main.fragment_news.*
 import kotlinx.android.synthetic.main.fragment_news.view.*
+import kotlinx.android.synthetic.main.post_item_row.*
+import kotlinx.android.synthetic.main.post_item_row.view.*
 
 
 class NewsFragment : Fragment() {
@@ -60,7 +63,7 @@ class NewsFragment : Fragment() {
 
             posts?.let {
                 newsRecyclerView.visibility = View.VISIBLE
-                newsAdapter.updateCountryList(posts)
+                newsAdapter.updatePostList(posts)
                 hideShimmerEffect()
             }
 

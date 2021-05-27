@@ -11,7 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rowPostLayout"
-        onPostClickListener="@{post.uuid}"
+        onPostClickListener="@{post.id}"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginTop="2dp"
@@ -33,21 +33,19 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/cardViewBackground"
-                >
+                android:background="@color/cardViewBackground">
 
                 <ImageView
                     android:id="@+id/rowPostIMG"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
-                    android:scaleType="centerCrop"
-                    android:padding="10dp"
                     android:downloadUrl="@{post.postImage}"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/ic_launcher_background"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/rowPostTitle"
@@ -63,12 +61,12 @@
 
                 <TextView
                     android:id="@+id/rowPostDate"
+                    getDateTimeSubtract="@{post.date}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
                     android:layout_marginTop="1.5dp"
+                    android:layout_marginEnd="5dp"
                     android:textColor="@color/cardViewDateColor"
-                    getDateTimeSubtract="@{post.date}"
                     android:textSize="11sp"
                     app:layout_constraintEnd_toEndOf="@+id/rowPostTitle"
                     app:layout_constraintTop_toBottomOf="@+id/rowPostTitle" />
@@ -83,26 +81,37 @@
                     app:layout_constraintTop_toBottomOf="@+id/rowPostTitle"
                     app:srcCompat="@drawable/date_time_row" />
 
-                <ImageView
+                <CheckBox
                     android:id="@+id/turnedFavID"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
                     android:layout_margin="15dp"
+                    android:visibility="gone"
+                    android:button="@drawable/turned_in_not_favorite"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/turned_in_not_favorite" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/favID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <!--                <TextView-->
-<!--                    android:id="@+id/rowPostCategory"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textColor="@color/cate"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:layout_marginBottom="4dp"-->
-<!--                    android:layout_marginLeft="10dp"-->
-<!--                    android:text="Category"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/rowPostTitle" />-->
+                <!--                    android:id="@+id/rowPostCategory"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:textColor="@color/cate"-->
+                <!--                    android:textStyle="bold"-->
+                <!--                    android:layout_marginBottom="4dp"-->
+                <!--                    android:layout_marginLeft="10dp"-->
+                <!--                    android:text="Category"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@+id/rowPostTitle" />-->
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

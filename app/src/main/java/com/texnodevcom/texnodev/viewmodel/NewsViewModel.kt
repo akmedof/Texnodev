@@ -42,7 +42,7 @@ class NewsViewModel(application: Application) : BaseViewModel(application) {
     private fun getDataFromSQLite() {
         postLoading.value = true
         launch {
-            val posts = PostDatabase(getApplication()).postDAO().getAllPosts()
+            val posts = PostDatabase(getApplication()).postDAO.getAllPosts()
             showNews(posts)
             Toast.makeText(getApplication(),"News Post From SQLite", Toast.LENGTH_LONG).show()
         }
@@ -79,7 +79,7 @@ class NewsViewModel(application: Application) : BaseViewModel(application) {
 
     private fun storeInSQLite(list: List<Post>) {
         launch {
-            val dao = PostDatabase(getApplication()).postDAO()
+            val dao = PostDatabase(getApplication()).postDAO
             dao.deleteAllPosts()
             val listLong = dao.insertAll(*list.toTypedArray()) // -> list -> individual
             var i = 0

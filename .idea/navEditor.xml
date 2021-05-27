@@ -34,8 +34,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-328" />
-                            <option name="y" value="130" />
+                            <option name="x" value="53" />
+                            <option name="y" value="81" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -46,9 +46,18 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-546" />
-                            <option name="y" value="132" />
+                            <option name="x" value="-441" />
+                            <option name="y" value="128" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_favoriteFragment_to_postDetailsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -79,12 +88,17 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-671" />
-                            <option name="y" value="-175" />
+                            <option name="x" value="-698" />
+                            <option name="y" value="-17" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_postDetailsFragment_to_favoriteFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_postDetailsFragment_to_newsFragment">
                               <value>
                                 <LayoutPositions />
@@ -103,6 +117,15 @@
                             <option name="x" value="-187" />
                             <option name="y" value="-250" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_privacyFragment_to_accountFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>

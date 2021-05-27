@@ -41,6 +41,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <CheckBox
+                    android:id="@+id/detailsFavorite"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:layout_margin="15dp"
+                    android:button="@drawable/turned_in_not_favorite"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="400dp"
