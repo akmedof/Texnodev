@@ -24,7 +24,7 @@ import com.texnodevmedia.texnodev.dao.PostDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 
-class NewsRowBinding(application: Application) : BaseViewModel(application) {
+class NewsRowBinding {
 
 
     companion object {

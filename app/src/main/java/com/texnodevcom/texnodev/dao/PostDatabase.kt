@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.texnodevcom.texnodev.dao.PostDAO
+import com.texnodevcom.texnodev.model.Category
 import com.texnodevcom.texnodev.model.Favorite
 import com.texnodevcom.texnodev.model.Post
 

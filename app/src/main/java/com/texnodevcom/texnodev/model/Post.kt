@@ -22,7 +22,7 @@ data class Post(
     val content: String?,
 //    @ColumnInfo(name = "categories")
 //    @SerializedName("categories")
-//    val categories: String,
+//    val categories: List<Category>,
     @ColumnInfo(name = "author_name")
     @SerializedName("author_name")
     val authorName: String?,

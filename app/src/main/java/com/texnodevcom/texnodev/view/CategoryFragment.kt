@@ -38,7 +38,7 @@ class CategoryFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(CategoryViewModel::class.java)
         viewModel.getData()
 
-        categoryRecyclerView.layoutManager = GridLayoutManager(requireContext(), 3,)
+        categoryRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2,)
         categoryRecyclerView.adapter = categoryAdapter
 
         viewModel.categories.observe(viewLifecycleOwner, Observer { cates->

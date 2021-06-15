@@ -16,19 +16,21 @@ class CategoryAdapter():
     private var categories = emptyList<CategoryNews>()
 
     class MyViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
-        val imageIcon = view.findViewById<ImageView>(R.id.categoryImage)
-        val name = view.findViewById<TextView>(R.id.categoryName)
+        val imageIcon = view.findViewById<ImageView>(R.id.catRowIcon)
+        val imageBG = view.findViewById<ImageView>(R.id.catRowImgBG)
+        val name = view.findViewById<TextView>(R.id.catRowName)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val infalte = LayoutInflater.from(parent.context)
-        val view = infalte.inflate(R.layout.category_row, parent, false)
+        val view = infalte.inflate(R.layout.category_row_item, parent, false)
         return MyViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val category = categories[position]
-        holder.imageIcon.setImageResource(category.image)
+        holder.imageIcon.setImageResource(category.icon)
+        holder.imageBG.setImageResource(category.bg)
         holder.name.text = category.name
 
         holder.view.setOnClickListener {

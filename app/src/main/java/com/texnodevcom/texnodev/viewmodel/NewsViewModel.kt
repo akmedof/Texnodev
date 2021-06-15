@@ -50,7 +50,6 @@ class NewsViewModel(application: Application) : BaseViewModel(application) {
 
     private fun getDataFromAPI() {
         postLoading.value = true
-
         disposable.add(
             newsApiServices.getData()
                 .subscribeOn(Schedulers.newThread())

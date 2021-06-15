@@ -82,16 +82,16 @@ class PostDetailsFragment : Fragment() {
                 detailsDate.text = getDateTimeDetails(post.date.toString())
                 getHtml(post.content.toString())
 
-                detailsFavorite.setOnCheckedChangeListener { buttonView, isChecked ->
-                    if (detailsFavorite.isChecked){
-                        viewModel.insertFAV(post)
-                        detailsFavorite.setButtonDrawable(R.drawable.turned_in_texnodev)
-                        Toast.makeText(requireContext(), "Elave Olundu", Toast.LENGTH_LONG).show()
-                    }else{
-                        detailsFavorite.setButtonDrawable(R.drawable.turned_in_not_favorite)
-                        Toast.makeText(requireContext(), "Error", Toast.LENGTH_LONG).show()
-                    }
-                }
+//                detailsFavorite.setOnCheckedChangeListener { buttonView, isChecked ->
+//                    if (detailsFavorite.isChecked){
+//                        viewModel.insertFAV(post)
+//                        detailsFavorite.setButtonDrawable(R.drawable.turned_in_texnodev)
+//                        Toast.makeText(requireContext(), "Elave Olundu", Toast.LENGTH_LONG).show()
+//                    }else{
+//                        detailsFavorite.setButtonDrawable(R.drawable.turned_in_not_favorite)
+//                        Toast.makeText(requireContext(), "Error", Toast.LENGTH_LONG).show()
+//                    }
+//                }
             }
         })
     }
