@@ -8,14 +8,17 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.texnodevcom.texnodev.R
-import com.texnodevcom.texnodev.model.CategoryNews
+import com.texnodevcom.texnodev.model.Categories
 
 class CategoryAdapter():
     RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
 
-    private var categories = emptyList<CategoryNews>()
+    private var categories = emptyList<Categories>()
 
     class MyViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
+//        fun bind(categories: Categories){
+//
+//        }
         val imageIcon = view.findViewById<ImageView>(R.id.catRowIcon)
         val imageBG = view.findViewById<ImageView>(R.id.catRowImgBG)
         val name = view.findViewById<TextView>(R.id.catRowName)
@@ -42,7 +45,7 @@ class CategoryAdapter():
         return categories.size
     }
 
-    fun updateCategoryList(newList: List<CategoryNews>) {
+    fun updateCategoryList(newList: List<Categories>) {
         categories = newList
         notifyDataSetChanged()
     }

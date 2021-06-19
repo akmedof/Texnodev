@@ -16,6 +16,7 @@ import androidx.core.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.atilsamancioglu.kotlincountries.util.downloadFromUrl
 import com.atilsamancioglu.kotlincountries.util.getDateTimeDetails
@@ -36,7 +37,7 @@ class PostDetailsFragment : Fragment() {
     private lateinit var viewModel : DetailsViewModel
     private lateinit var binding : FragmentPostDetailsBinding
 
-    private lateinit var image: ImageView
+//    private lateinit var image: ImageView
     private lateinit var conn: Document
     private val list = ArrayList<String>()
     private val list2 = ArrayList<String>()
@@ -51,14 +52,14 @@ class PostDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_post_details, container, false)
         return binding.root
-//        return inflater.inflate(R.layout.fragment_post_details, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
 
