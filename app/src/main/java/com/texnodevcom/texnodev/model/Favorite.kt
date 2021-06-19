@@ -3,6 +3,7 @@ package com.texnodevcom.texnodev.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
 
 
 @Entity
@@ -15,6 +16,8 @@ data class Favorite(
     val date: String?,
     @ColumnInfo(name = "content")
     val content: String?,
+    @ColumnInfo(name = "categories")
+    val categories: String?,
     @ColumnInfo(name = "author_name")
     val authorName: String?,
     @ColumnInfo(name = "author_image")

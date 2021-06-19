@@ -21,9 +21,9 @@ class DetailsViewModel(application: Application) : BaseViewModel(application) {
 
     fun insertFAV(p: Post){
         launch {
-            val fav: Favorite = Favorite(p.id, p.title, p.date, p.content, p.authorName, p.authorImage, p.postImage)
+            val fav: Favorite = Favorite(p.id, p.title, p.date, p.content, p.categories,
+                p.authorName, p.authorImage, p.postImage)
             dao.insertFavorite(fav)
         }
     }
-
 }

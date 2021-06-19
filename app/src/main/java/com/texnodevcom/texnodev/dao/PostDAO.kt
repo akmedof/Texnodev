@@ -3,7 +3,6 @@ package com.texnodevcom.texnodev.dao
 import androidx.room.*
 import com.texnodevcom.texnodev.model.Favorite
 import com.texnodevcom.texnodev.model.Post
-import com.texnodevcom.texnodev.model.TestPost
 
 @Dao
 interface PostDAO {

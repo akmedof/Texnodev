@@ -20,9 +20,9 @@ data class Post(
     @ColumnInfo(name = "content")
     @SerializedName("content")
     val content: String?,
-//    @ColumnInfo(name = "categories")
-//    @SerializedName("categories")
-//    val categories: List<Category>,
+    @ColumnInfo(name = "categories")
+    @SerializedName("categories")
+    val categories: String?,
     @ColumnInfo(name = "author_name")
     @SerializedName("author_name")
     val authorName: String?,
