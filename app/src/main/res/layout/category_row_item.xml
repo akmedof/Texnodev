@@ -4,7 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
+        <variable
+            name="category"
+            type="com.texnodevcom.texnodev.model.Categories" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,10 +26,10 @@
 
                 <ImageView
                     android:id="@+id/catRowImgBG"
+                    loadCategoryImage="@{category.bg}"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/bitcoinbg"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -55,9 +57,11 @@
 
                 <ImageView
                     android:id="@+id/catRowIcon"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="25dp"
+                    loadCategoryImage="@{category.icon}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:layout_marginBottom="20sp"
                     android:src="@drawable/android_icon"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -68,14 +72,15 @@
                     android:id="@+id/catRowName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Program Təminatı"
                     android:gravity="center"
+                    android:layout_marginBottom="20sp"
+                    android:text="@{category.name}"
                     android:textColor="@color/textColor"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/catRowIcon"
-                    app:layout_constraintStart_toStartOf="@+id/catRowIcon"
-                    app:layout_constraintTop_toBottomOf="@+id/catRowIcon" />
+                    app:layout_constraintBottom_toBottomOf="@+id/catRowImgBG"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
