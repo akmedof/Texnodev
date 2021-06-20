@@ -45,20 +45,6 @@ class NewsAdapter() : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val post = posts[position]
         holder.bind(post)
-//        val checkBox = holder.itemView.turnedFavID
-//
-//        checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
-//
-//            if (checkBox.isChecked){
-//                checkBox.setButtonDrawable(R.drawable.turned_in_texnodev)
-////                post.id?.let { viewModelFav.setFavoriteByID(it) }
-//                Toast.makeText(holder.itemView.context, "Checked " + post.id, Toast.LENGTH_LONG).show()
-//            }else{
-//                checkBox.setButtonDrawable(R.drawable.turned_in_not_favorite)
-//                Toast.makeText(holder.itemView.context, "Not Checked ", Toast.LENGTH_LONG).show()
-//            }
-//
-//        }
     }
 
     override fun getItemCount(): Int {

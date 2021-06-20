@@ -12,34 +12,6 @@ class FavoriteViewModel(application: Application) : BaseViewModel(application) {
     val favorites = MutableLiveData<List<Favorite>>()
     val dao = PostDatabase(getApplication()).postDAO
 
-    fun insertFAV(p: Post){
-        launch {
-            val fav: Favorite = Favorite(p.id, p.title, p.date, p.content, p.categories,
-                p.authorName, p.authorImage, p.postImage)
-            dao.insertFavorite(fav)
-        }
-    }
-
-    fun setFavoriteByID(id: Int){
-        launch {
-            val p = dao.getPostByID(id)
-            val fav = Favorite(p.id, p.title, p.date, p.content, p.categories,
-                p.authorName, p.authorImage, p.postImage)
-            dao.insertFavorite(fav)
-        }
-    }
-
-    fun deleteFavByID(favorite: Favorite){
-        launch {
-            dao.deleteFavorite(favorite)
-        }
-    }
-
-    fun getFavorite(uuid: Int){
-        launch {
-            dao.getFavoriteByID(uuid)
-        }
-    }
 
     fun getAllFavorite(){
         launch {

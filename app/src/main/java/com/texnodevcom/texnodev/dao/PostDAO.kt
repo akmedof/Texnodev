@@ -33,6 +33,10 @@ interface PostDAO {
     suspend fun getAllFavorite(): List<Favorite>
 
     @Transaction
+    @Query("SELECT * FROM posts WHERE categories = :categoryName")
+    suspend fun getPostByCategory(categoryName: String): List<Post>
+
+    @Transaction
     @Query("DELETE FROM favorite")
     suspend fun deleteAllFavorite()
 
