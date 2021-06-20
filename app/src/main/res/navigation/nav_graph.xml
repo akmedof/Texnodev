@@ -28,7 +28,11 @@
         android:id="@+id/categoryFragment"
         android:name="com.texnodevcom.texnodev.view.CategoryFragment"
         android:label="Category"
-        tools:layout="@layout/fragment_category" />
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_categoryDetailsFragment"
+            app:destination="@id/categoryDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/accountFragment"
         android:name="com.texnodevcom.texnodev.view.AccountFragment"
@@ -62,5 +66,21 @@
         <action
             android:id="@+id/action_privacyFragment_to_accountFragment"
             app:destination="@id/accountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryDetailsFragment"
+        android:name="com.texnodevcom.texnodev.view.CategoryDetailsFragment"
+        android:label="fragment_category_details"
+        tools:layout="@layout/fragment_category_details" >
+        <action
+            android:id="@+id/action_categoryDetailsFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_categoryDetailsFragment_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment" />
+        <argument
+            android:name="categoryID"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 </navigation>
