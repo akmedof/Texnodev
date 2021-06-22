@@ -5,7 +5,9 @@ import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
 import androidx.navigation.findNavController
+import com.texnodevcom.texnodev.view.CategoryDetailsFragmentDirections
 import com.texnodevcom.texnodev.view.CategoryFragmentDirections
+import com.texnodevcom.texnodev.view.NewsFragmentDirections
 
 class CategoryRowBinding {
 
@@ -27,6 +29,20 @@ class CategoryRowBinding {
                     categoryLayoutRow.findNavController().navigate(action)
                 }catch (e: Exception){
                     Log.d("onCategoryClickListener", e.toString())
+                }
+            }
+        }
+
+        @BindingAdapter("onCategoryPostClickListener")
+        @JvmStatic
+        fun onCategoryPostClickListener(rowPostLayout: ConstraintLayout, id: Int){
+            rowPostLayout.setOnClickListener {
+                try {
+                    val action = CategoryDetailsFragmentDirections
+                        .actionCategoryDetailsFragmentToPostDetailsFragment(id)
+                    rowPostLayout.findNavController().navigate(action)
+                }catch (e: Exception){
+                    Log.d("onCategoryPostClickListener", e.toString())
                 }
             }
         }

@@ -70,7 +70,8 @@
                             android:id="@+id/categoryDetailsIcon"
                             android:layout_width="175dp"
                             android:layout_height="0dp"
-                            android:src="@drawable/android_icon"
+                            android:src="@drawable/mobil_app_icon"
+                            android:padding="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />

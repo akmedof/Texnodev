@@ -13,7 +13,7 @@
         android:id="@+id/rowPostLayout"
         onPostClickListener="@{post.id}"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="4dp">
 
@@ -21,7 +21,7 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/rowPostCardView"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:cardCornerRadius="3dp"
             android:layout_marginStart="2.5dp"
             android:layout_marginEnd="2.5dp"
@@ -32,7 +32,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@color/cardViewBackground">
 
                 <ImageView
@@ -49,8 +49,10 @@
 
                 <TextView
                     android:id="@+id/rowPostTitle"
-                    android:layout_width="385dp"
-                    android:layout_height="46.5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:text="@{post.title}"
                     android:textColor="@color/cardViewTitleColor"
                     android:textSize="17.5dp"
@@ -64,21 +66,21 @@
                     getDateTimeSubtract="@{post.date}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="1.5dp"
-                    android:layout_marginEnd="5dp"
                     android:textColor="@color/cardViewDateColor"
                     android:textSize="11sp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/rowPostTitle"
                     app:layout_constraintTop_toBottomOf="@+id/rowPostTitle" />
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="14sp"
-                    android:layout_height="14sp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginEnd="2dp"
+                    android:layout_width="11sp"
+                    android:layout_height="11sp"
+                    android:layout_marginEnd="2.5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/rowPostDate"
                     app:layout_constraintEnd_toStartOf="@+id/rowPostDate"
-                    app:layout_constraintTop_toBottomOf="@+id/rowPostTitle"
+                    app:layout_constraintTop_toTopOf="@+id/rowPostDate"
                     app:srcCompat="@drawable/date_time_row" />
 
                 <CheckBox
@@ -86,8 +88,8 @@
                     android:layout_width="29dp"
                     android:layout_height="29dp"
                     android:layout_margin="15dp"
-                    android:visibility="gone"
                     android:button="@drawable/turned_in_not_favorite"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 

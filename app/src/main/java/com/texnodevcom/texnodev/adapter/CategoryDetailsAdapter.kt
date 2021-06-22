@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.texnodevcom.texnodev.databinding.PostItemRowBinding
+import com.texnodevcom.texnodev.databinding.CategoryPostItemRowBinding
 import com.texnodevcom.texnodev.model.Post
 import com.texnodevcom.texnodev.util.CategoryDetailsDiffUtil
 
@@ -12,7 +12,7 @@ class CategoryDetailsAdapter : RecyclerView.Adapter<CategoryDetailsAdapter.MyDet
 
     private var posts = emptyList<Post>()
 
-    class MyDetViewHolder(private var binding : PostItemRowBinding): RecyclerView.ViewHolder(binding.root) {
+    class MyDetViewHolder(private var binding : CategoryPostItemRowBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(post: Post){
             binding.post = post
             binding.executePendingBindings()
@@ -20,7 +20,7 @@ class CategoryDetailsAdapter : RecyclerView.Adapter<CategoryDetailsAdapter.MyDet
         companion object{
             fun from(parent: ViewGroup): MyDetViewHolder{
                 val inflater = LayoutInflater.from(parent.context)
-                val binding = PostItemRowBinding.inflate(inflater, parent, false)
+                val binding = CategoryPostItemRowBinding.inflate(inflater, parent, false)
                 return MyDetViewHolder(binding)
             }
         }

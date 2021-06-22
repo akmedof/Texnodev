@@ -57,32 +57,32 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+
                 <ImageView
                     android:id="@+id/catRowIcon"
                     loadCategoryImage="@{category.icon}"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:layout_marginTop="25dp"
+                    android:padding="5dp"
                     android:scaleType="fitCenter"
-                    android:layout_marginBottom="20sp"
-                    android:src="@drawable/android_icon"
+                    android:src="@drawable/mobil_app_icon"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
 
                 <TextView
                     android:id="@+id/catRowName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_marginBottom="20sp"
                     android:text="@{category.name}"
                     android:textColor="@color/textColor"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/catRowImgBG"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintEnd_toEndOf="@+id/catRowIcon"
+                    app:layout_constraintStart_toStartOf="@+id/catRowIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/catRowIcon" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -70,7 +70,7 @@
     <fragment
         android:id="@+id/categoryDetailsFragment"
         android:name="com.texnodevcom.texnodev.view.CategoryDetailsFragment"
-        android:label="fragment_category_details"
+        android:label=" "
         tools:layout="@layout/fragment_category_details" >
         <action
             android:id="@+id/action_categoryDetailsFragment_to_categoryFragment"

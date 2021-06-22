@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="post"
+            type="com.texnodevcom.texnodev.model.Post" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rowPostLayout"
+        onCategoryPostClickListener="@{post.id}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="4dp">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rowPostCardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="3dp"
+            android:layout_marginStart="2.5dp"
+            android:layout_marginEnd="2.5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cardViewBackground">
+
+                <ImageView
+                    android:id="@+id/rowPostIMG"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:downloadUrl="@{post.postImage}"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/rowPostTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@{post.title}"
+                    android:textColor="@color/cardViewTitleColor"
+                    android:textSize="17.5dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/rowPostIMG"
+                    app:layout_constraintTop_toBottomOf="@+id/rowPostIMG" />
+
+                <TextView
+                    android:id="@+id/rowPostDate"
+                    getDateTimeSubtract="@{post.date}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/cardViewDateColor"
+                    android:textSize="11sp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rowPostTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/rowPostTitle" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="11sp"
+                    android:layout_height="11sp"
+                    android:layout_marginEnd="2.5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/rowPostDate"
+                    app:layout_constraintEnd_toStartOf="@+id/rowPostDate"
+                    app:layout_constraintTop_toTopOf="@+id/rowPostDate"
+                    app:srcCompat="@drawable/date_time_row" />
+
+                <CheckBox
+                    android:id="@+id/turnedFavID"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:layout_margin="15dp"
+                    android:button="@drawable/turned_in_not_favorite"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/favID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/rowPostCategory"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:textColor="@color/cate"-->
+                <!--                    android:textStyle="bold"-->
+                <!--                    android:layout_marginBottom="4dp"-->
+                <!--                    android:layout_marginLeft="10dp"-->
+                <!--                    android:text="Category"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@+id/rowPostTitle" />-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -39,20 +39,15 @@ class CategoryDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val id = categoryArgsID.categoryID
+        viewModel = ViewModelProvider(this).get(CategoryDetailsViewModel::class.java)
         categoryViewModel = ViewModelProvider(this).get(CategoryViewModel::class.java)
         categoryViewModel.getData()
-        viewModel = ViewModelProvider(this).get(CategoryDetailsViewModel::class.java)
-//        viewModel.getData("Oyun")
-
 
         recyclerViewCategory.layoutManager = LinearLayoutManager(requireContext())
         recyclerViewCategory.adapter = adapter
 
         categoryObserver(id)
-//        Log.i("c7", categoryDetailsText.text.toString())
-//        categoryList()
     }
-
 
     private fun categoryObserver(id: Int){
         categoryViewModel.categories.observe(viewLifecycleOwner, Observer { categories ->
@@ -68,6 +63,7 @@ class CategoryDetailsFragment : Fragment() {
             }
         })
     }
+
     private fun categoryList(name: String){
         viewModel.getData(name)
         viewModel.posts.observe(viewLifecycleOwner, Observer { posts->

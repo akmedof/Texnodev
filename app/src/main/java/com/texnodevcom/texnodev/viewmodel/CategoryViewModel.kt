@@ -23,12 +23,14 @@ class CategoryViewModel(application: Application): BaseViewModel(application) {
         val c10 = Categories(10, "Texnolohiya", R.drawable.technology_icon, R.drawable.technologybg)
         val c11 = Categories(11, "Mobil", R.drawable.mobile_icon, R.drawable.phonebg)
         val c12 = Categories(12, "Avtomobil", R.drawable.cars_icon, R.drawable.carsbg)
-        val c13 = Categories(13, "Android", R.drawable.android_icon, R.drawable.androidbg)
+        val c13 = Categories(13, "Mobil Tətbiqetmə", R.drawable.mobil_app_icon, R.drawable.androidbg)
         val c14 = Categories(14, "İş Sektoru", R.drawable.business_sector_icon, R.drawable.isbg)
         val c15 = Categories(15, "Xəbər", R.drawable.news_icon, R.drawable.newsbg)
         val c16 = Categories(16, "Planet", R.drawable.planet_icon, R.drawable.planetbg)
+        val c17 = Categories(17, "Həyat", R.drawable.heyat_icon, R.drawable.heyatbg)
+        val c18 = Categories(18, "Tarix", R.drawable.tarix_icon, R.drawable.historybg)
 
-        val list = arrayListOf<Categories>(c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16)
+        val list = arrayListOf<Categories>(c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18)
 
         categories.value = list
 
