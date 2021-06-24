@@ -1,5 +1,6 @@
 package com.texnodevcom.texnodev.view
 
+import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.texnodevcom.texnodev.R
 import com.texnodevcom.texnodev.adapter.NewsAdapter
+import com.texnodevcom.texnodev.util.ConnectionLiveData
 import com.texnodevcom.texnodev.viewmodel.NewsViewModel
 import kotlinx.android.synthetic.main.fragment_news.*
 import kotlinx.android.synthetic.main.fragment_news.view.*
@@ -24,6 +26,7 @@ class NewsFragment : Fragment() {
     private lateinit var viewModel : NewsViewModel
     private val newsAdapter = NewsAdapter()
     private lateinit var mView : View
+//    private lateinit var cld : ConnectionLiveData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,12 +48,22 @@ class NewsFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(NewsViewModel::class.java)
         viewModel.refreshData()
+//        checkNetworkConnected()
+
 
         newsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         newsRecyclerView.adapter = newsAdapter
 
         swipeRefreshLayout.setOnRefreshListener {
             newsError.visibility = View.GONE
+            refresDataID.visibility =View.GONE
+            viewModel.refreshFromAPI()
+            swipeRefreshLayout.isRefreshing = false
+        }
+
+        refresDataID.setOnClickListener {
+            newsError.visibility = View.GONE
+            refresDataID.visibility = View.GONE
             viewModel.refreshFromAPI()
             swipeRefreshLayout.isRefreshing = false
         }
@@ -73,9 +86,11 @@ class NewsFragment : Fragment() {
         viewModel.postError.observe(viewLifecycleOwner, Observer { error->
             error?.let {
                 if(it) {
-                    newsError.visibility = View.VISIBLE
+                    refresDataID.visibility = View.VISIBLE
+                    newsError.visibility = View.GONE
                 } else {
                     newsError.visibility = View.GONE
+                    refresDataID.visibility = View.GONE
                 }
             }
         })
@@ -100,5 +115,18 @@ class NewsFragment : Fragment() {
     private fun hideShimmerEffect(){
         mView.newsRecyclerView.hideShimmer()
     }
+
+//    private fun checkNetworkConnected(){
+//        val application = Application()
+//        cld = ConnectionLiveData(application)
+//
+//        cld.observe(viewLifecycleOwner, Observer { isConnected ->
+//            if (isConnected){
+//                viewModel.refreshData()
+//            }else{
+//                viewModel.refreshFromRoom()
+//            }
+//        })
+//    }
 
 }

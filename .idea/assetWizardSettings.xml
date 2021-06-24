@@ -329,7 +329,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/turned_in_not/baseline_turned_in_not_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/refresh/baseline_refresh_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -340,7 +340,7 @@
                         <option name="values">
                           <map>
                             <entry key="autoMirrored" value="true" />
-                            <entry key="outputName" value="ic_baseline_turned_in_not_24" />
+                            <entry key="outputName" value="refres_news_icon" />
                             <entry key="sourceFile" value="C:\Users\Texnodev\Desktop\Texnodev" />
                           </map>
                         </option>

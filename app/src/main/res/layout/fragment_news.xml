@@ -15,38 +15,51 @@
 
             <com.todkars.shimmer.ShimmerRecyclerView
                 android:id="@+id/newsRecyclerView"
-                app:shimmer_recycler_layout="@layout/row_post_shimmer_layout"
-                app:shimmer_recycler_item_count="3"
-                android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:shimmer_recycler_item_count="3"
+                app:shimmer_recycler_layout="@layout/row_post_shimmer_layout" />
 
             <TextView
                 android:id="@+id/newsError"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Error! Try Again"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-            </TextView>
+                app:layout_constraintTop_toTopOf="parent"></TextView>
 
-<!--            <ProgressBar-->
-<!--                android:id="@+id/newsLoading"-->
+            <ImageView
+                android:id="@+id/refresDataID"
+                android:layout_width="69dp"
+                android:layout_height="67dp"
+                android:layout_marginTop="287dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/refres_news_icon"
+                app:tint="@color/cardViewTitleColor" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/refresDataTextİD"-->
 <!--                android:layout_width="wrap_content"-->
 <!--                android:layout_height="wrap_content"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                >-->
+<!--                android:text="Yenidən Yüklə."-->
+<!--                android:textColor="@color/cardViewTitleColor"-->
+<!--                android:padding="10dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="20sp"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/refresDataID"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/refresDataID"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/refresDataID" />-->
 
-<!--            </ProgressBar>-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

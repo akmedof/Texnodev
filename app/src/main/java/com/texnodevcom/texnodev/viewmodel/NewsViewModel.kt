@@ -25,7 +25,6 @@ class NewsViewModel(application: Application) : BaseViewModel(application) {
     val postLoading = MutableLiveData<Boolean>()
 
     fun refreshData() {
-
         val updateTime = customPreferences.getTime()
         if (updateTime != null && updateTime != 0L && System.nanoTime() - updateTime < refreshTime) {
             getDataFromSQLite()
@@ -33,6 +32,10 @@ class NewsViewModel(application: Application) : BaseViewModel(application) {
             getDataFromAPI()
         }
 
+    }
+
+    fun refreshFromRoom(){
+        getDataFromSQLite()
     }
 
     fun refreshFromAPI() {
