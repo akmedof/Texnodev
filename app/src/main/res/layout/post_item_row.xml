@@ -84,12 +84,12 @@
                     app:srcCompat="@drawable/date_time_row" />
 
                 <CheckBox
-                    android:id="@+id/turnedFavID"
-                    android:layout_width="29dp"
-                    android:layout_height="29dp"
+                    android:id="@+id/rowPostFavoriteID"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
                     android:layout_margin="15dp"
-                    android:button="@drawable/turned_in_not_favorite"
                     android:visibility="gone"
+                    android:button="@drawable/turned_in_not_favorite"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 

@@ -26,4 +26,10 @@ class DetailsViewModel(application: Application) : BaseViewModel(application) {
             dao.insertFavorite(fav)
         }
     }
+
+    fun deleteFavoriteByID(id: Int){
+        launch {
+            dao.deleteFavoriteByID(id)
+        }
+    }
 }

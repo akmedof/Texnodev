@@ -14,6 +14,7 @@ import com.texnodevcom.texnodev.adapter.NewsAdapter
 import com.texnodevcom.texnodev.viewmodel.NewsViewModel
 import kotlinx.android.synthetic.main.fragment_news.*
 import kotlinx.android.synthetic.main.fragment_news.view.*
+import kotlinx.android.synthetic.main.fragment_post_details.*
 import kotlinx.android.synthetic.main.post_item_row.*
 import kotlinx.android.synthetic.main.post_item_row.view.*
 

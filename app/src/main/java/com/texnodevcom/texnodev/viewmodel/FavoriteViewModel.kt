@@ -20,4 +20,10 @@ class FavoriteViewModel(application: Application) : BaseViewModel(application) {
         }
     }
 
+    fun deleteFavoriteByID(id: Int){
+        launch {
+            dao.deleteFavoriteByID(id)
+        }
+    }
+
 }

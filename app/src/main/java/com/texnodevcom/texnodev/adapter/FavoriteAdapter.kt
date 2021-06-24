@@ -2,19 +2,21 @@ package com.texnodevcom.texnodev.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.texnodevcom.texnodev.databinding.FavoriteItemRowBinding
-import com.texnodevcom.texnodev.databinding.FragmentFavoriteBinding
-import com.texnodevcom.texnodev.databinding.PostItemRowBinding
 import com.texnodevcom.texnodev.model.Favorite
 import com.texnodevcom.texnodev.model.Post
 import com.texnodevcom.texnodev.util.FavDiffUtil
 import com.texnodevcom.texnodev.util.NewsDiffUtil
+import com.texnodevcom.texnodev.viewmodel.DetailsViewModel
+import kotlinx.android.synthetic.main.favorite_item_row.view.*
 
 class FavoriteAdapter : RecyclerView.Adapter<FavoriteAdapter.FavViewHolder>() {
 
-    private var favorites = emptyList<Favorite>()
+    var favorites = emptyList<Favorite>()
 
     class FavViewHolder(private var binding: FavoriteItemRowBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(favorite: Favorite){

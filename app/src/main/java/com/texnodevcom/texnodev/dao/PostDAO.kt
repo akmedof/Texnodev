@@ -46,4 +46,10 @@ interface PostDAO {
     @Delete
     suspend fun deleteFavorite(vararg favorite: Favorite)
 
+    @Query("DELETE FROM favorite WHERE id = :favID")
+    suspend fun deleteFavoriteByID(favID: Int)
+
+
+    @Query("DELETE FROM favorite WHERE id = :favID")
+    fun deleteFavoriteByID2(favID: Int)
 }

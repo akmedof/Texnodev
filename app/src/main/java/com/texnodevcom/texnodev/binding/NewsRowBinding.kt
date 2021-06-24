@@ -2,6 +2,7 @@ package com.texnodevcom.texnodev.binding
 
 import android.app.Application
 import android.net.ParseException
+import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -15,9 +16,7 @@ import androidx.navigation.findNavController
 import com.atilsamancioglu.kotlincountries.util.downloadFromUrl
 import com.atilsamancioglu.kotlincountries.util.placeholderProgressBar
 import com.texnodevcom.texnodev.R
-import com.texnodevcom.texnodev.view.AccountFragmentDirections
-import com.texnodevcom.texnodev.view.FavoriteFragmentDirections
-import com.texnodevcom.texnodev.view.NewsFragmentDirections
+import com.texnodevcom.texnodev.view.*
 import com.texnodevcom.texnodev.viewmodel.BaseViewModel
 import com.texnodevcom.texnodev.viewmodel.FavoriteViewModel
 import com.texnodevmedia.texnodev.dao.PostDatabase
@@ -48,7 +47,7 @@ class NewsRowBinding {
         fun onFavoriteClickListener(rowPostLayout: ConstraintLayout, id: Int){
             rowPostLayout.setOnClickListener {
                 try {
-                    val action = FavoriteFragmentDirections.actionFavoriteFragmentToPostDetailsFragment(id)
+                    val action = FavoriteFragmentDirections.actionFavoriteFragmentToPostDetailsFragment(id, true)
                     rowPostLayout.findNavController().navigate(action)
                 }catch (e: Exception){
                     Log.d("onFavoriteClickListener", e.toString())

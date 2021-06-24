@@ -23,6 +23,7 @@ import com.atilsamancioglu.kotlincountries.util.getDateTimeDetails
 import com.atilsamancioglu.kotlincountries.util.placeholderProgressBar
 import com.texnodevcom.texnodev.R
 import com.texnodevcom.texnodev.databinding.FragmentPostDetailsBinding
+import com.texnodevcom.texnodev.model.Post
 import com.texnodevcom.texnodev.viewmodel.DetailsViewModel
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import kotlinx.android.synthetic.main.fragment_post_details.*
@@ -42,6 +43,7 @@ class PostDetailsFragment : Fragment() {
     private val list = ArrayList<String>()
     private val list2 = ArrayList<String>()
     private lateinit var x: Elements
+    private var check: Boolean? = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,10 +66,8 @@ class PostDetailsFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
 
         val id = argPostID.postID
-
+        check = argPostID.favCheck
         viewModel.getPostByID(id)
-
-//        observerLiveDataFavorite()
 
         observerLiveDataPost()
     }
@@ -79,18 +79,30 @@ class PostDetailsFragment : Fragment() {
                 detailsDate.text = getDateTimeDetails(post.date.toString())
                 getHtml(post.content.toString())
 
-                detailsFavorite.setOnCheckedChangeListener { buttonView, isChecked ->
-                    if (detailsFavorite.isChecked){
-                        viewModel.insertFAV(post)
-                        detailsFavorite.setButtonDrawable(R.drawable.turned_in_texnodev)
-                        Toast.makeText(requireContext(), "Elave Olundu", Toast.LENGTH_LONG).show()
-                    }else{
-                        detailsFavorite.setButtonDrawable(R.drawable.turned_in_not_favorite)
-                        Toast.makeText(requireContext(), "Error", Toast.LENGTH_LONG).show()
-                    }
+                if (check == true){
+                    detailsFavorite.isChecked = true
+                    detailsFavorite.setButtonDrawable(R.drawable.turned_in_texnodev)
+                    onCheckFavoritePost(post)
+                }else{
+                    onCheckFavoritePost(post)
                 }
+
             }
         })
+    }
+
+    fun onCheckFavoritePost(post: Post){
+        detailsFavorite.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (detailsFavorite.isChecked){
+                viewModel.insertFAV(post)
+                detailsFavorite.setButtonDrawable(R.drawable.turned_in_texnodev)
+                Toast.makeText(requireContext(), "Elave Olundu", Toast.LENGTH_LONG).show()
+            }else{
+                viewModel.deleteFavoriteByID(post.id!!.toInt())
+                detailsFavorite.setButtonDrawable(R.drawable.turned_in_not_favorite)
+                Toast.makeText(requireContext(), "Fav Topic Delete Success", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
     fun adddata() {
