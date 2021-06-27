@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.texnodevcom.texnodev.R
 import com.texnodevcom.texnodev.util.ConnectionLiveData
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        MobileAds.initialize(this) {}
 
         supportActionBar?.setBackgroundDrawable(ColorDrawable(getColor(R.color.toolBarBackground)))
 

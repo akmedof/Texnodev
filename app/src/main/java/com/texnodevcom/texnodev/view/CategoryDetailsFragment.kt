@@ -10,17 +10,22 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.texnodevcom.texnodev.R
 import com.texnodevcom.texnodev.adapter.CategoryDetailsAdapter
 import com.texnodevcom.texnodev.viewmodel.CategoryDetailsViewModel
 import com.texnodevcom.texnodev.viewmodel.CategoryViewModel
 import kotlinx.android.synthetic.main.fragment_category_details.*
+import kotlinx.android.synthetic.main.fragment_category_details.view.*
+import kotlinx.android.synthetic.main.fragment_favorite.*
 
 class CategoryDetailsFragment : Fragment() {
 
     private val categoryArgsID by navArgs<CategoryDetailsFragmentArgs>()
     private lateinit var categoryViewModel: CategoryViewModel
     private lateinit var viewModel: CategoryDetailsViewModel
+    private lateinit var mView : View
     private val adapter = CategoryDetailsAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,17 +36,27 @@ class CategoryDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_category_details, container, false)
+        mView = inflater.inflate(R.layout.fragment_category_details, container, false)
+        return mView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        MobileAds.initialize(requireContext()) {}
+        var mAdView = adCategoryDetailsID
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
         val id = categoryArgsID.categoryID
         viewModel = ViewModelProvider(this).get(CategoryDetailsViewModel::class.java)
         categoryViewModel = ViewModelProvider(this).get(CategoryViewModel::class.java)
         categoryViewModel.getData()
+
+//        favDetSwipeRefreshID.setOnRefreshListener {
+//            categoryViewModel.getData()
+//            favSwipeRefresh.isRefreshing = false
+//        }
 
         recyclerViewCategory.layoutManager = LinearLayoutManager(requireContext())
         recyclerViewCategory.adapter = adapter
@@ -58,6 +73,7 @@ class CategoryDetailsFragment : Fragment() {
                         categoryDetailsIcon.setImageResource(it.icon)
                         categoryDetailsText.text = it.name
                         categoryList(it.name)
+                        hideShimmerEffect()
                     }
                 }
             }
@@ -68,9 +84,21 @@ class CategoryDetailsFragment : Fragment() {
         viewModel.getData(name)
         viewModel.posts.observe(viewLifecycleOwner, Observer { posts->
             posts?.let {
-//                Log.i("c7", it.toString())
-                adapter.setData(it)
+                if (it.isNotEmpty()){
+                    adapter.setData(it)
+                }else{
+                    favDetImageID.visibility = View.VISIBLE
+                    favDetImageTextID.visibility = View.VISIBLE
+                }
             }
         })
+    }
+
+    private fun showShimmerEffect(){
+        mView.recyclerViewCategory.showShimmer()
+    }
+
+    private fun hideShimmerEffect(){
+        mView.recyclerViewCategory.hideShimmer()
     }
 }

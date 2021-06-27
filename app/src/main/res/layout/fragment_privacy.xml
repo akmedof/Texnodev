@@ -83,7 +83,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/privacyDesc"
-                            android:text="www.politikyol.com veb saytı və mobil tətbiqetmə ilə paylaşdığınız hər cür məlumat fiziki və faktiki olaraq müxtəlif vasitələrlə icazəsiz girişdən qorunur."
+                            android:text="www.texnodev.com veb saytı və mobil tətbiqetmə ilə paylaşdığınız hər cür məlumat fiziki və faktiki olaraq müxtəlif vasitələrlə icazəsiz girişdən qorunur."
                             android:textSize="17.5sp"/>
 
 

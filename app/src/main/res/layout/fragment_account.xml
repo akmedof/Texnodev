@@ -7,347 +7,377 @@
     android:background="@color/fragmentBackground"
     tools:context=".view.AccountFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="40dp"
-        app:cardCornerRadius="300dp"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/accountImageID"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/user" />
+            android:layout_height="match_parent">
 
-    </androidx.cardview.widget.CardView>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/accountName"
-        android:layout_margin="15dp"
-        android:padding="5dp"
-        android:text="Tezliklə istifadəçi \nQeydiyyatı"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
-        app:layout_constraintStart_toEndOf="@+id/cardView2"
-        app:layout_constraintTop_toTopOf="@+id/cardView2" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="50dp"
+                    app:cardCornerRadius="300dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/appDarkModeID"
-        android:layout_width="370dp"
-        android:layout_height="70dp"
-        app:cardCornerRadius="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+                    <ImageView
+                        android:id="@+id/accountImageID"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/user" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/cardViewAccount">
+                </androidx.cardview.widget.CardView>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="20dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10sp"
-                    android:src="@drawable/dark_mode_icon"/>
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:orientation="vertical">
+                    android:layout_margin="15dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="5dp"
+                    android:text="Tezliklə istifadəçi \nQeydiyyatı"
+                    android:textColor="@color/accountName"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cardView2"
+                    app:layout_constraintTop_toTopOf="@+id/cardView2" />
 
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/accountName"
-                        android:text="Gecə Modu"
-                        android:textSize="17.5sp"
-                        android:textStyle="bold" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/appDarkModeID"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:textColor="@color/accountDesc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Oxumaq və batareyanın\nömrü üçün tövsiyə olunur" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cardViewAccount">
 
-                </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="2dp"
+                            android:orientation="horizontal">
 
-                <androidx.appcompat.widget.SwitchCompat
-                    android:id="@+id/switch_darkLight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="50dp"
-                    app:thumbTint="@color/switchThumb"
-                    app:trackTint="@color/switchTrack" />
+                            <ImageView
+                                android:id="@+id/imageView4"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10sp"
+                                android:src="@drawable/dark_mode_icon" />
 
-            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:orientation="vertical">
 
-        </LinearLayout>
+                                <TextView
+                                    android:id="@+id/textView2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Gecə Modu"
+                                    android:textColor="@color/accountName"
+                                    android:textSize="17.5sp"
+                                    android:textStyle="bold" />
 
-    </androidx.cardview.widget.CardView>
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Oxumaq və batareyanın\nömrü üçün tövsiyə olunur"
+                                    android:textColor="@color/accountDesc" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/appPrivacyID"
-        android:layout_width="370dp"
-        android:layout_height="70dp"
-        app:cardCornerRadius="10dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginLeft="20dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appDarkModeID">
+                            </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/cardViewAccount">
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/switch_darkLight"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                app:thumbTint="@color/switchThumb"
+                                app:trackTint="@color/switchTrack" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="9dp"
-                android:layout_marginLeft="20dp"
-                android:orientation="horizontal">
+                        </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="4dp"
-                    android:src="@drawable/lock_icon" />
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="2.5dp"
-                    android:orientation="vertical">
+                </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/accountName"
-                        android:text="Gizlilik Siyasəti"
-                        android:textStyle="bold"
-                        android:textSize="17.5sp"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/appPrivacyID"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/appDarkModeID">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/accountDesc"
-                        android:text="İstifadə şərtləri və məxfilik"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cardViewAccount">
 
-                </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="9dp"
+                            android:orientation="horizontal">
 
-            </LinearLayout>
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="4dp"
+                                android:src="@drawable/lock_icon" />
 
-        </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2.5dp"
+                                android:orientation="vertical">
 
-    </androidx.cardview.widget.CardView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Gizlilik Siyasəti"
+                                    android:textColor="@color/accountName"
+                                    android:textSize="17.5sp"
+                                    android:textStyle="bold" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/appFeedbackID"
-        android:layout_width="370dp"
-        android:layout_height="70dp"
-        app:cardCornerRadius="10dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginLeft="20dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appPrivacyID">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="İstifadə şərtləri və məxfilik"
+                                    android:textColor="@color/accountDesc" />
 
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:background="@color/cardViewAccount">
+                            </LinearLayout>
 
-           <LinearLayout
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="11dp"
-               android:layout_marginLeft="20dp"
-               android:orientation="horizontal">
+                        </LinearLayout>
 
-               <ImageView
-                   android:id="@+id/imageView5"
-                   android:layout_width="40dp"
-                   android:layout_height="40dp"
-                   android:layout_marginTop="1dp"
-                   android:src="@drawable/feedback_icon" />
+                    </LinearLayout>
 
-               <LinearLayout
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginLeft="3dp"
-                   android:orientation="vertical">
+                </androidx.cardview.widget.CardView>
 
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:textColor="@color/accountName"
-                       android:text="Qiymətləndirmə"
-                       android:layout_marginLeft="3dp"
-                       android:textStyle="bold"
-                       android:textSize="17.5sp"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/appFeedbackID"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/appPrivacyID">
 
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:textColor="@color/accountDesc"
-                       android:layout_marginLeft="4dp"
-                       android:text="Rəy və təkliflərinizi bizim üçün vacibdir"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cardViewAccount">
 
-               </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="11dp"
+                            android:orientation="horizontal">
 
-           </LinearLayout>
+                            <ImageView
+                                android:id="@+id/imageView5"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="1dp"
+                                android:src="@drawable/feedback_icon" />
 
-       </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:orientation="vertical">
 
-    </androidx.cardview.widget.CardView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="3dp"
+                                    android:text="Qiymətləndirmə"
+                                    android:textColor="@color/accountName"
+                                    android:textSize="17.5sp"
+                                    android:textStyle="bold" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/appAboutUsID"
-        android:layout_width="370dp"
-        android:layout_height="70dp"
-        app:cardCornerRadius="10dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginLeft="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appFeedbackID">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="4dp"
+                                    android:text="Rəy və təkliflərinizi bizim üçün vacibdir"
+                                    android:textColor="@color/accountDesc" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/cardViewAccount">
+                            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="20dp"
-                android:orientation="horizontal">
+                        </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="40dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/about" />
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:orientation="vertical">
+                </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/accountName"
-                        android:layout_marginLeft="3dp"
-                        android:text="Haqqımızda"
-                        android:textSize="17.5sp"
-                        android:textStyle="bold" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/appAboutUsID"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/appFeedbackID">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/accountDesc"
-                        android:layout_marginLeft="3dp"
-                        android:text="Tətbiq məlumatı, Tərtib versiyası\nMüəllif hüquqları" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cardViewAccount">
 
-                </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="2dp"
+                            android:orientation="horizontal">
 
-            </LinearLayout>
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="40dp"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/about" />
 
-        </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:orientation="vertical">
 
-    </androidx.cardview.widget.CardView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="3dp"
+                                    android:text="Haqqımızda"
+                                    android:textColor="@color/accountName"
+                                    android:textSize="17.5sp"
+                                    android:textStyle="bold" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/appSocialMediaID"
-        android:layout_width="370dp"
-        android:layout_height="70dp"
-        app:cardCornerRadius="10dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appAboutUsID">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="3dp"
+                                    android:text="Tətbiq məlumatı, Tərtib versiyası\nMüəllif hüquqları"
+                                    android:textColor="@color/accountDesc" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/cardViewAccount">
+                            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="45dp"
-                android:orientation="horizontal">
+                        </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/accInstagramID"
-                    android:layout_width="40dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/instagram" />
+                    </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/accTelegramID"
-                    android:layout_width="40dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="35dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/telegram" />
+                </androidx.cardview.widget.CardView>
 
-                <ImageView
-                    android:id="@+id/accTwitterID"
-                    android:layout_width="40dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="35dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/twitter" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/appSocialMediaID"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="40dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/appAboutUsID">
 
-                <ImageView
-                    android:id="@+id/accFacebookID"
-                    android:layout_width="40dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="35dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/facebook" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/cardViewAccount">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:orientation="horizontal">
+
+                           <ImageView
+                               android:id="@+id/accInstagramID"
+                               android:layout_width="40dp"
+                               android:layout_height="45dp"
+                               android:layout_marginStart="40dp"
+                               android:layout_marginTop="13dp"
+                               android:layout_marginEnd="13dp"
+                               android:src="@drawable/instagram" />
+
+                           <ImageView
+                               android:id="@+id/accTelegramID"
+                               android:layout_width="40dp"
+                               android:layout_height="45dp"
+                               android:layout_margin="15dp"
+                               android:src="@drawable/telegram" />
+
+                           <ImageView
+                               android:id="@+id/accTwitterID"
+                               android:layout_width="40dp"
+                               android:layout_height="45dp"
+                               android:layout_margin="13dp"
+                               android:src="@drawable/twitter" />
+
+                           <ImageView
+                               android:id="@+id/accFacebookID"
+                               android:layout_width="40dp"
+                               android:layout_height="45dp"
+                               android:layout_margin="13dp"
+                               android:src="@drawable/facebook" />
+
+                       </LinearLayout>
 
 
+                    </LinearLayout>
 
-            </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+        </FrameLayout>
 
-
-
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.texnodevcom.texnodev.view.FavoriteFragment"
-        android:label="Favorite"
+        android:label="Favoritlər"
         tools:layout="@layout/fragment_favorite" >
         <action
             android:id="@+id/action_favoriteFragment_to_postDetailsFragment"
@@ -31,7 +31,7 @@
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.texnodevcom.texnodev.view.CategoryFragment"
-        android:label="Category"
+        android:label="Kateqoriya"
         tools:layout="@layout/fragment_category" >
         <action
             android:id="@+id/action_categoryFragment_to_categoryDetailsFragment"
@@ -49,7 +49,7 @@
     <fragment
         android:id="@+id/postDetailsFragment"
         android:name="com.texnodevcom.texnodev.view.PostDetailsFragment"
-        android:label="Details"
+        android:label=" "
         tools:layout="@layout/fragment_post_details" >
         <action
             android:id="@+id/action_postDetailsFragment_to_newsFragment"

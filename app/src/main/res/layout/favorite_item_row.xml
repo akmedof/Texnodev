@@ -14,7 +14,7 @@
         onFavoriteClickListener="@{favorite.id}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp">
+        android:layout_margin="5dp">
 
 
         <androidx.cardview.widget.CardView
@@ -43,15 +43,13 @@
                         android:id="@+id/favTitle"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:padding="2dp"
+                        android:layout_margin="5dp"
                         android:text="@{favorite.title}"
                         android:textColor="@color/favRowTitleColor"
-                        android:textSize="17.5sp"
+                        android:textSize="16.5sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
 
                     <TextView
                         android:id="@+id/favDate"
@@ -79,8 +77,8 @@
 
                     <ImageView
                         android:id="@+id/imageView6"
-                        android:layout_width="14sp"
-                        android:layout_height="14sp"
+                        android:layout_width="12sp"
+                        android:layout_height="12sp"
                         android:layout_marginTop="1dp"
                         app:layout_constraintBottom_toBottomOf="@+id/favDate"
                         app:layout_constraintEnd_toStartOf="@+id/favDate"

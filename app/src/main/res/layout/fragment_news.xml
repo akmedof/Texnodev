@@ -29,23 +29,26 @@
                 android:id="@+id/newsError"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Error! Try Again"
-                android:visibility="gone"
+                android:text="        Xəta!\nYenidən Yüklə"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:padding="10dp"
+                android:textColor="@color/cardViewTitleColor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></TextView>
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/refresDataID"
-                android:layout_width="69dp"
-                android:layout_height="67dp"
-                android:layout_marginTop="287dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/refres_news_icon"
-                app:tint="@color/cardViewTitleColor" />
+<!--            <ImageView-->
+<!--                android:id="@+id/refresDataID"-->
+<!--                android:layout_width="69dp"-->
+<!--                android:layout_height="67dp"-->
+<!--                android:layout_marginTop="287dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:srcCompat="@drawable/refres_news_icon"-->
+<!--                app:tint="@color/cardViewTitleColor" />-->
 
 <!--            <TextView-->
 <!--                android:id="@+id/refresDataTextİD"-->

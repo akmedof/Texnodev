@@ -1,5 +1,6 @@
 package com.texnodevcom.texnodev.view
 
+import android.content.ContentValues
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -21,6 +22,12 @@ import androidx.navigation.fragment.navArgs
 import com.atilsamancioglu.kotlincountries.util.downloadFromUrl
 import com.atilsamancioglu.kotlincountries.util.getDateTimeDetails
 import com.atilsamancioglu.kotlincountries.util.placeholderProgressBar
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.texnodevcom.texnodev.R
 import com.texnodevcom.texnodev.databinding.FragmentPostDetailsBinding
 import com.texnodevcom.texnodev.model.Post
@@ -37,6 +44,9 @@ class PostDetailsFragment : Fragment() {
     private val argPostID by navArgs<PostDetailsFragmentArgs>()
     private lateinit var viewModel : DetailsViewModel
     private lateinit var binding : FragmentPostDetailsBinding
+
+    private var mInterstitialAd: InterstitialAd? = null
+    private lateinit var mAdView : AdView
 
 //    private lateinit var image: ImageView
     private lateinit var conn: Document
@@ -60,8 +70,8 @@ class PostDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
+        showBannerAds()
+//        goToSecond()
 
         viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
 
@@ -96,13 +106,49 @@ class PostDetailsFragment : Fragment() {
             if (detailsFavorite.isChecked){
                 viewModel.insertFAV(post)
                 detailsFavorite.setButtonDrawable(R.drawable.turned_in_texnodev)
-                Toast.makeText(requireContext(), "Elave Olundu", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Favoritə əlavə olund.", Toast.LENGTH_SHORT).show()
             }else{
                 viewModel.deleteFavoriteByID(post.id!!.toInt())
                 detailsFavorite.setButtonDrawable(R.drawable.turned_in_not_favorite)
-                Toast.makeText(requireContext(), "Fav Topic Delete Success", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Favoritlər-dən silindi.", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun showBannerAds(){
+        //Banner ID
+        //ca-app-pub-7752518464363066/9541659272
+        //Test ID ca-app-pub-3940256099942544/6300978111
+        MobileAds.initialize(requireContext()) {}
+        mAdView = adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+    }
+    private fun goToSecond(){
+        //NewsFragment kecid AdMob rekalm ID
+        //original ID  ca-app-pub-7752518464363066/3939701007
+        // test ID  ca-app-pub-3940256099942544/1033173712
+        val adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(requireContext(),"ca-app-pub-3940256099942544/1033173712",
+            adRequest, object : InterstitialAdLoadCallback() {
+                override fun onAdFailedToLoad(adError: LoadAdError) {
+                    Log.d(ContentValues.TAG, adError.message)
+                    mInterstitialAd = null
+                }
+
+                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                    Log.d(ContentValues.TAG, "Ad was loaded.")
+                    mInterstitialAd = interstitialAd
+                }
+            })
+//        if (rowPostLayout.isClickable){
+        if (mInterstitialAd != null) {
+            mInterstitialAd?.show(requireActivity())
+        } else {
+            Log.d("TAG", "The interstitial ad wasn't ready yet.")
+        }
+//        }
     }
 
     fun adddata() {

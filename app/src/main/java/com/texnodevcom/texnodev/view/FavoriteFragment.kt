@@ -29,6 +29,7 @@ import com.texnodevcom.texnodev.viewmodel.FavoriteViewModel
 import com.texnodevmedia.texnodev.dao.PostDatabase
 import kotlinx.android.synthetic.main.favorite_item_row.*
 import kotlinx.android.synthetic.main.fragment_favorite.*
+import kotlinx.android.synthetic.main.fragment_news.*
 import kotlinx.android.synthetic.main.post_item_row.*
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
@@ -49,7 +50,6 @@ class FavoriteFragment : Fragment() {
             val layoutPosition = viewHolder.layoutPosition
             val favID = adapter.favorites[layoutPosition]
             viewModel.deleteFavoriteByID(favID.id!!.toInt())
-
         }
 
     }
@@ -57,7 +57,6 @@ class FavoriteFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -78,14 +77,26 @@ class FavoriteFragment : Fragment() {
         recyclerViewFav.adapter = adapter
         ItemTouchHelper(swipeCallBack).attachToRecyclerView(recyclerViewFav)
 
+        favSwipeRefresh.setOnRefreshListener {
+            viewModel.getAllFavorite()
+            favSwipeRefresh.isRefreshing = false
+        }
+        observerLiveData()
 
+    }
+
+    private fun observerLiveData(){
         viewModel.favorites.observe(viewLifecycleOwner, Observer { favorites ->
             favorites?.let {
-                adapter.updateFavoriteList(it)
-
+                if (it.isNotEmpty()){
+                    val list = it.reversed()
+                    adapter.updateFavoriteList(list)
+                }else{
+                    favImageID.visibility = View.VISIBLE
+                    favImageTextID.visibility = View.VISIBLE
+                }
             }
         })
-
     }
 
 }

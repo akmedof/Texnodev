@@ -60,6 +60,7 @@ class NewsRowBinding {
         fun onPostClickListener(rowPostLayout: ConstraintLayout, id: Int){
             rowPostLayout.setOnClickListener {
                 try {
+
                     val action = NewsFragmentDirections.actionNewsFragmentToPostDetailsFragment(id)
                     rowPostLayout.findNavController().navigate(action)
                 }catch (e: Exception){
