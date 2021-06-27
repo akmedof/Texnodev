@@ -45,7 +45,7 @@ class PostDetailsFragment : Fragment() {
     private lateinit var viewModel : DetailsViewModel
     private lateinit var binding : FragmentPostDetailsBinding
 
-    private var mInterstitialAd: InterstitialAd? = null
+//    private var mInterstitialAd: InterstitialAd? = null
     private lateinit var mAdView : AdView
 
 //    private lateinit var image: ImageView
@@ -71,7 +71,6 @@ class PostDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showBannerAds()
-//        goToSecond()
 
         viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
 
@@ -116,40 +115,38 @@ class PostDetailsFragment : Fragment() {
     }
 
     private fun showBannerAds(){
-        //Banner ID
-        //ca-app-pub-7752518464363066/9541659272
-        //Test ID ca-app-pub-3940256099942544/6300978111
+        //Category Details Banner ID: ca-app-pub-7752518464363066/9541659272
         MobileAds.initialize(requireContext()) {}
         mAdView = adView
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
     }
-    private fun goToSecond(){
-        //NewsFragment kecid AdMob rekalm ID
-        //original ID  ca-app-pub-7752518464363066/3939701007
-        // test ID  ca-app-pub-3940256099942544/1033173712
-        val adRequest = AdRequest.Builder().build()
-
-        InterstitialAd.load(requireContext(),"ca-app-pub-3940256099942544/1033173712",
-            adRequest, object : InterstitialAdLoadCallback() {
-                override fun onAdFailedToLoad(adError: LoadAdError) {
-                    Log.d(ContentValues.TAG, adError.message)
-                    mInterstitialAd = null
-                }
-
-                override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                    Log.d(ContentValues.TAG, "Ad was loaded.")
-                    mInterstitialAd = interstitialAd
-                }
-            })
-//        if (rowPostLayout.isClickable){
-        if (mInterstitialAd != null) {
-            mInterstitialAd?.show(requireActivity())
-        } else {
-            Log.d("TAG", "The interstitial ad wasn't ready yet.")
-        }
+//    private fun goToSecond(){
+//        //NewsFragment kecid AdMob rekalm ID
+//        //original ID  ca-app-pub-7752518464363066/3939701007
+//        // test ID  ca-app-pub-3940256099942544/1033173712
+//        val adRequest = AdRequest.Builder().build()
+//
+//        InterstitialAd.load(requireContext(),"ca-app-pub-3940256099942544/1033173712",
+//            adRequest, object : InterstitialAdLoadCallback() {
+//                override fun onAdFailedToLoad(adError: LoadAdError) {
+//                    Log.d(ContentValues.TAG, adError.message)
+//                    mInterstitialAd = null
+//                }
+//
+//                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+//                    Log.d(ContentValues.TAG, "Ad was loaded.")
+//                    mInterstitialAd = interstitialAd
+//                }
+//            })
+////        if (rowPostLayout.isClickable){
+//        if (mInterstitialAd != null) {
+//            mInterstitialAd?.show(requireActivity())
+//        } else {
+//            Log.d("TAG", "The interstitial ad wasn't ready yet.")
 //        }
-    }
+////        }
+//    }
 
     fun adddata() {
         for (l in list) {

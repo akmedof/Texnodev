@@ -42,7 +42,7 @@ class CategoryDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        //Category Details Banner ID: ca-app-pub-7752518464363066/7875393811
         MobileAds.initialize(requireContext()) {}
         var mAdView = adCategoryDetailsID
         val adRequest = AdRequest.Builder().build()
@@ -52,11 +52,6 @@ class CategoryDetailsFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(CategoryDetailsViewModel::class.java)
         categoryViewModel = ViewModelProvider(this).get(CategoryViewModel::class.java)
         categoryViewModel.getData()
-
-//        favDetSwipeRefreshID.setOnRefreshListener {
-//            categoryViewModel.getData()
-//            favSwipeRefresh.isRefreshing = false
-//        }
 
         recyclerViewCategory.layoutManager = LinearLayoutManager(requireContext())
         recyclerViewCategory.adapter = adapter
@@ -73,7 +68,7 @@ class CategoryDetailsFragment : Fragment() {
                         categoryDetailsIcon.setImageResource(it.icon)
                         categoryDetailsText.text = it.name
                         categoryList(it.name)
-                        hideShimmerEffect()
+//                        hideShimmerEffect()
                     }
                 }
             }
@@ -94,11 +89,11 @@ class CategoryDetailsFragment : Fragment() {
         })
     }
 
-    private fun showShimmerEffect(){
-        mView.recyclerViewCategory.showShimmer()
-    }
-
-    private fun hideShimmerEffect(){
-        mView.recyclerViewCategory.hideShimmer()
-    }
+//    private fun showShimmerEffect(){
+//        mView.recyclerViewCategory.showShimmer()
+//    }
+//
+//    private fun hideShimmerEffect(){
+//        mView.recyclerViewCategory.hideShimmer()
+//    }
 }
