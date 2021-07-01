@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/newsFragment"
-        android:title="Home"
-        android:icon="@drawable/home_texnodev"/>
+        android:title="Xəbərlər"
+        android:icon="@drawable/news_public_icon"/>
 
     <item android:id="@+id/categoryFragment"
-        android:title="Category"
+        android:title="Kateqoriya"
         android:icon="@drawable/category_texnodev"/>
 
     <item android:id="@+id/favoriteFragment"
-        android:title="Favorite"
+        android:title="Favorit"
         android:icon="@drawable/turned_in_texnodev"/>
 
     <item android:id="@+id/accountFragment"

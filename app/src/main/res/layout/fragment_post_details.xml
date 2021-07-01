@@ -94,19 +94,32 @@
                     app:layout_constraintStart_toEndOf="@+id/cardView"
                     app:layout_constraintTop_toTopOf="@+id/cardView" />
 
+
+                <TextView
+                    android:id="@+id/detailsCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@{post.categories}"
+                    android:textColor="@color/detailsCategoryColor"
+                    android:textSize="17.5sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detailsImage" />
+
                 <TextView
                     android:id="@+id/detailsDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:textSize="12sp"
                     android:textColor="@color/detailsDateColor"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/detailsImage" />
+                    app:layout_constraintEnd_toEndOf="@+id/detailsCategory"
+                    app:layout_constraintTop_toBottomOf="@+id/detailsCategory" />
 
                 <ImageView
                     android:id="@+id/dateIcon"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
+                    android:layout_width="12.5dp"
+                    android:layout_height="12.5dp"
                     android:layout_marginEnd="3dp"
                     android:src="@drawable/date_time_row"
                     app:layout_constraintBottom_toBottomOf="@+id/detailsDate"

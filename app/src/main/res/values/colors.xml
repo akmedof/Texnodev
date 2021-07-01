@@ -50,6 +50,8 @@
     <color name="detailsNameColor">#25306E</color> //FF4E16
     <color name="detailsDateColor">#272D50</color>
     <color name="detailsContentColor">#D81A1A32</color>
+    <color name="detailsCategoryColor">#EA004A</color>
+
 
     //Favorite Fragment
     <color name="favTitle">#25306E</color> //FF4E16
