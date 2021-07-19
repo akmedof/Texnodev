@@ -170,7 +170,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 app:adSize="BANNER"
-                app:adUnitId="ca-app-pub-7752518464363066/9541659272"
+                app:adUnitId="ca-app-pub-7752518464363066/8502083342"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
